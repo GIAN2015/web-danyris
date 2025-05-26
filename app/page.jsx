@@ -1,8 +1,5 @@
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to Our Application</h1>
-      <p>This is the home page of our application.</p>
-    </div>
+   <div> <h1> hola como estas </h1>  </div>
   );
 }

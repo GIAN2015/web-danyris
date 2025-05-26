@@ -1,0 +1,104 @@
+/* styles/globals.css */
+.bg-custom-blue {
+  background-color: #33618D;
+}
+
+
+.font-custom {
+  font-family: 'Oxanium', Sans-serif;
+  font-weight: 400;
+  color: aliceblue;
+  font-size: larger;
+  margin: 10px;
+}
+
+.active-link {
+  color: darkgrey; 
+
+}
+
+.custom{
+  border-radius:0px ;
+}
+
+
+.font-custom:hover{
+  color:darkgrey
+}
+
+.dropdown-menu {
+  
+  border-radius: 0px;
+  padding: 0px;
+}
+.text-decoration{
+  font-family: 'Oxanium', Sans-serif;
+  font-weight: 400;
+}
+.text-decoration:hover {
+  color: whitesmoke;
+}
+.dropdown-item {
+border-bottom: 1px solid #33618D;;
+}
+
+.dropdown-item:hover {
+  background-color: #33618D;
+}
+.underline:last-child {
+  border-bottom: none;
+}
+
+.margin{
+  margin-left: 80px;
+}
+
+.navbar-nav{
+  margin-left:290px
+}
+/* Footer styles */
+.bg-footer {
+  background-color: #33618D;
+  color: white;
+  padding: 1rem;
+
+
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* altura mínima de la ventana */
+}
+
+.content-wrap {
+  flex: 1; /* el contenido toma todo el espacio disponible */
+}
+
+ .punto{
+  color: #DEA123; /* o el color que uses */
+  list-style-type: disc; /* círculo sólido */
+  margin-left: 20px; /* separación del borde */
+}
+
+a{
+  color: #DEA123
+}
+
+.font-li{
+  text-decoration: none;
+  color: white;
+    font-family: "Oxanium", Sans-serif;
+ 
+  
+}
+
+.font-li2{
+  all: unset;
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+}
+
+.font-tittle{
+  font-family: "Oxanium", Sans-serif;
+}
