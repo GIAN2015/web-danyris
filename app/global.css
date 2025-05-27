@@ -19,7 +19,13 @@
 
 .custom{
   border-radius:0px ;
+  color: white;
 }
+
+.header{
+  position: relative;
+}
+
 
 
 .font-custom:hover{
@@ -101,4 +107,67 @@ a{
 
 .font-tittle{
   font-family: "Oxanium", Sans-serif;
+}
+
+
+.primary-tittle{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 900;
+  color: #DEA123;
+  font-size: 5rem;
+}
+
+.btn-primary {
+  background-color: #DEA123;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  height: 60px;
+  width: 200px;
+}
+
+
+.btn-primary:hover {
+  background-color: #DEA123;
+  transform: scale(0.9);
+  
+
+
+}
+
+.first-section{
+  margin-left: 150px;
+  
+}
+
+.font-button{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  
+  font-size: larger;
+}
+
+.text-center{
+  background-color: white;
+  padding: 150px;
+  border-top: 5px solid #33618D;
+
+
+}
+.tittle-numbers{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: #33618D;
+  font-size: 5rem;
+}
+.font-numbers{
+  color: #33618D;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 100;
+  font-size: 200%;
 }

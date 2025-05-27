@@ -22,7 +22,8 @@ export default function RootLayout({ children }) {
 
         </head>
       <body>
-        <Header />
+        <header className='header'><Header /></header>
+        
         <div className='page-container'>
         <div className='content-wrap'>
         {children}
