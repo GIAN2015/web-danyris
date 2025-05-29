@@ -37,10 +37,10 @@ export default function Footer() {
                         <ul class="list-unstyled">
 
                             <li className="punto"><a className="font-li" href="/">Inicio</a></li>
-                            <li className="punto"> <a className="font-li" href="/"> Nosotros</a></li>
-                            <li className="punto"><a className="font-li" href="/">Servicios</a></li>
-                            <li className="punto"><a className="font-li" href="/">Contáctenos</a></li>
-                            <li className="punto"><a className="font-li" href="/">Novedades</a></li>
+                            <li className="punto"> <a className="font-li" href="/about"> Nosotros</a></li>
+                            <li className="punto"><a className="font-li" href="/servicios">Servicios</a></li>
+                            <li className="punto"><a className="font-li" href="/contactenos">Contáctenos</a></li>
+                            <li className="punto"><a className="font-li" href="/novedades">Novedades</a></li>
                         </ul>
                     </div>
 
