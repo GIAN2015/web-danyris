@@ -1,9 +1,12 @@
 export default function about(){
     return(
-        <div>
-            <h1>About</h1>
-            <p>probnado las rutas</p>
+        <div className="background-services">
+        <div className="first-section">
+          <h1 className="primary-nosotros">Sobre Nosotros</h1>
         </div>
+
+        
+      </div>
     )
 }
 

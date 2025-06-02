@@ -334,3 +334,178 @@ a {
   text-align: center;
   margin-top: 20px;
 }
+
+.background-services{
+  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.primary-servicios{
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.text-des{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  font-size: larger;
+  margin-top: 20px;
+}
+
+/* Estilos comunes para todas las tarjetas */
+.card-body,
+.card-body1,
+.card-body2,
+.card-body3,
+.card-body4,
+.card-body5,
+.card-body6 {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-body::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body1::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/004.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  
+
+  
+  z-index: 0;
+}
+
+.card-body2::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/imagen-de-informacion-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body3::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/portada-desarrollo-de-pagina-web.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body4::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body5::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body6::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/licencias-de-software-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+/* Asegura que el contenido esté encima del fondo */
+.card-body > *,
+.card-body1 > *,
+.card-body2 > *,
+.card-body3 > *,
+.card-body4 > *,
+.card-body5 > *,
+.card-body6 > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover: brillo un poco más alto */
+.card-body:hover::before,
+.card-body1:hover::before,
+.card-body2:hover::before,
+.card-body3:hover::before,
+.card-body4:hover::before,
+.card-body5:hover::before,
+.card-body6:hover::before {
+  filter: brightness(80%);
+  transition: filter 0.5s ease;
+}
+
+
+.card-title {
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card-text {
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: larger;
+  text-align: center;
+  padding: 10px;
+}
+
+.bi{
+  color: white;
+  margin-left: 850px;
+ 
+
+
+}
+
+.list-item-servicio{
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  font-size: larger;
+}
