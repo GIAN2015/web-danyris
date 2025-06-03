@@ -27,7 +27,6 @@
 }
 
 
-
 .font-custom:hover {
   color: darkgrey
 }
@@ -41,6 +40,30 @@
 .text-decoration {
   font-family: 'Oxanium', Sans-serif;
   font-weight: 400;
+}
+.background-services{
+  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+.primary-servicios{
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.text-des{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  font-size: larger;
+  margin-top: 20px;
 }
 
 .text-decoration:hover {
@@ -300,16 +323,8 @@ a {
 
 .btn {
 
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 30px;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
+
+
 }
 
 .prev {
@@ -333,4 +348,409 @@ a {
   font-size: 3rem;
   text-align: center;
   margin-top: 20px;
+}
+
+
+
+/* PAGINA DEL ABOUT  */
+
+.about-background{
+   background-image: url('/img/about/diseno-depa-ginas-web-2jpg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0cqhs solid #33618D;
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  text-align: end;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  filter: brightness(60%);
+
+}
+
+.about-tittle{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 100px;
+  text-decoration:  underline 5;
+ 
+}
+
+.img-about{
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.text-prueba{
+
+  text-align: justify;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  color: black;
+  font-size: larger;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.tittle-about{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: #DEA123;
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-left: -220px;  
+}
+
+.align-self-start{
+  background-color: #33618D;
+  height:500px;
+  transition: 0.3s ease;
+ 
+}
+.align-self-start:hover{
+  filter: brightness(80%);
+
+}
+
+.align-self-end{
+  background-color: #DEA123;
+   height:500px;
+}
+.align-self-end:hover{
+  filter: brightness(60%);
+}
+
+.Section3{
+  width: 100%;
+}
+.tittle-section3{
+  text-decoration:   underline 3px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+
+
+.parrafo{
+  position: relative;
+  text-align: justifify;
+  padding: 100px;
+  margin-top: -100px;
+  color: whitesmoke;
+  font-size:  larger;
+}
+
+.button-mision{
+  
+  margin-left: 350px;
+  background-color: #DEA123;
+  color: white;
+  border-radius: 50px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  font-size: larger;
+  height: 60px;
+  width: 190px;
+}
+
+
+.button-mision:hover{
+  background-color: #DEA123;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.button-vision{
+    margin-left: 350px;
+  background-color: #33618D;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  font-size: larger;
+  height: 60px;
+  width: 190px;
+}
+
+.contactenos-background{
+  background-image: url('/img/contactenos/diseno-depa-ginas-web-2jpg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0cqhs solid #33618D;
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  text-align: end;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  filter: brightness(60%);
+}
+
+.button-line{
+  border-radius: 6px;
+  width: 100%;
+
+  color: white;
+  background-color: #33618D ;
+}
+
+.tittle-contactenos{
+  color: #33618D;
+  font-weight: 100;
+
+  font-size: 2.5rem;
+  text-align: start;
+ 
+}
+
+.par-contactenos{
+  color: #7A7A7A;
+
+  font-weight: 200;
+  font-size: larger;
+  text-align: start;
+}
+.contactenos-container1{
+padding: 50px;
+margin-left: 10%;
+}
+.contactenos-container{
+  background-color: #F5F5F5;
+  padding: 20px; 
+  border-radius: 20px;
+  border-left: #33618D 5px solid;
+}
+
+/* // */
+
+.contact-info {
+  font-family: 'Segoe UI', sans-serif;
+  color: #00477b;
+  max-width: 300px;
+  text-align: start;
+ 
+  margin-top: 10%;
+}
+
+.contact-info h5 {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #00477b;
+  margin-top: 2px;
+}
+
+.info-item .label {
+  font-size: 0.9rem;
+  color: #00477b;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  color: #00477b;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.card-body,
+.card-body1,
+.card-body2,
+.card-body3,
+.card-body4,
+.card-body5,
+.card-body6 {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-body::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body1::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/004.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  
+
+  
+  z-index: 0;
+}
+
+.card-body2::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/imagen-de-informacion-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body3::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/portada-desarrollo-de-pagina-web.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body4::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body5::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+.card-body6::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('/img/servicios/licencias-de-software-1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(40%);
+  z-index: 0;
+}
+
+/* Asegura que el contenido esté encima del fondo */
+.card-body > *,
+.card-body1 > *,
+.card-body2 > *,
+.card-body3 > *,
+.card-body4 > *,
+.card-body5 > *,
+.card-body6 > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover: brillo un poco más alto */
+.card-body:hover::before,
+.card-body1:hover::before,
+.card-body2:hover::before,
+.card-body3:hover::before,
+.card-body4:hover::before,
+.card-body5:hover::before,
+.card-body6:hover::before {
+  filter: brightness(80%);
+  transition: filter 0.5s ease;
+}
+
+
+.card-title {
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card-text {
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: larger;
+  text-align: center;
+  padding: 10px;
+}
+
+.bi-caret-down-fill{
+  color: white;
+  margin-left: 850px;
+ 
+
+
+}
+
+.list-item-servicio{
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  font-size: larger;
+}
+
+.header{
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+}
+
+.navbar-scrolled {
+  background-color: rgba(0, 0, 50, 0.9); /* Puedes cambiar el color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
 }

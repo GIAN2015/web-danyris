@@ -1,5 +1,8 @@
+// BootstrapClient.js
 'use client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from './BootstrapClient';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 export default function Home() {
@@ -82,29 +85,20 @@ export default function Home() {
       <div class="container text-center">
         <div class="row row-cols-3">
           {/* <!-- Carousel 0 --> */}
-          <div class="col">
-            <div id="carousel0" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
-                </div>
+          <div id="carousel0" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src="/img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel0" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel0" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+              <div className="carousel-item">
+                <img src="/img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+              </div>
+              <div className="carousel-item">
+                <img src="/img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+              </div>
             </div>
           </div>
+
 
           {/* <!-- Carousel 1 --> */}
           <div class="col">
@@ -120,14 +114,7 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -145,14 +132,7 @@ export default function Home() {
                   <img src="./img/logos/logo-kaspersky.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -170,20 +150,13 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
           {/* <!-- Carousel 4 --> */}
           <div class="col">
-            <div id="carousel4" class="carousel slide active" data-bs-ride="carousel" data-bs-interval="2000">
+            <div id="carousel4" class="carousel slide " data-bs-ride="carousel" data-bs-interval="2000">
               <div class="carousel-inner active">
                 <div class="carousel-item active">
                   <img src="./img/logos/logo-tp-link.png" class="d-block w-100" alt="..." />
@@ -195,14 +168,7 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel4" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -220,15 +186,98 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel5" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel5" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="container px-4 text-center contactenos-container1">
+        <div class="row gx-5">
+          <div class="col contactenos-container ">
+            <div class="p-3"><h1 className='tittle-contactenos'>Destaca tu proyecto con nosotros</h1></div>
+            <p className='par-contactenos'>Contamos con más de 9 años en el mercado nacional, brindando seguridad y calidad con las mejores soluciones.</p>
+            <div>
+              <h2 className='tittle-contactenos'>Contáctanos rápido</h2>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"> <i className="bi bi-person-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Nombre de Contacto" aria-label="Username" aria-describedby="basic-addon1"></input>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i className="bi bi-building"></i></span>
+                <input type="text" class="form-control" placeholder="Empresa" aria-label="Username" aria-describedby="basic-addon1"></input>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">   <i className="bi bi-envelope-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1"></input>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">  <i className="bi bi-phone-fill"></i></span>
+                <input type="text" class="form-control" placeholder="celular" aria-label="Username" aria-describedby="basic-addon1"></input>
+              </div>
+              <div class="input-group mb-1">
+                <span class="input-group-text" id="basic-addon1"> <i className="bi bi-chat-left-dots-fill"></i></span>
+                <input type="text" class="form-control" placeholder="mensaje" aria-label="Username" aria-describedby="basic-addon1"></input>
+
+                <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Elige un servicio" />
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" id='Cloud Computing '>Cloud Computing </a></li>
+                  <li><a class="dropdown-item" id='Cloud Computing '>Networking y Cableado Estructurado </a></li>
+                  <li><a class="dropdown-item" id='Cloud Computing '>Equipamiento </a></li>
+                  <li><a class="dropdown-item" id='Cloud Computing ' >Licenciamiento y Servicios </a></li>
+                  <li><a class="dropdown-item" id='Cloud Computing ' >Help Desk  </a></li>
+                </ul>
+
+              </div>
+              <button className='button-line'>Enviar</button>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="contact-info">
+              <h5>UBÍQUENOS</h5>
+
+              <div class="info-item">
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                  <span class="label">Teléfonos</span><br />
+                  <strong>(+51)1 480-0525 / +51 924 057 419</strong>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="bi bi-whatsapp"></i>
+                <div>
+                  <span class="label">WhatsApp</span><br />
+                  <strong>924 057 419</strong>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="bi bi-envelope-fill"></i>
+                <div>
+                  <span class="label">Email</span><br />
+                  <strong>informes@danyris.com</strong>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <strong>Calle Victor Jara, Mz. R, Lt. 6, UPIS San José, Urb, Lurín 15822</strong>
+                </div>
+              </div>
+
+              <h5>SÍGUENOS</h5>
+              <div class="social-icons">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
