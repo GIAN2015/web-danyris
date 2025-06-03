@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
 
             {children}
           </div>
-          <footer className='bg-footer'>
+          <footer className="footer bg-footer text-white py-5 animate-footer">
             <Footer />
           </footer>
         </div>
