@@ -1,6 +1,47 @@
 'use client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
 
+function Counter({ end, label }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.6 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && count < end) {
+      const interval = setInterval(() => {
+        setCount((prev) => {
+          if (prev >= end) {
+            clearInterval(interval);
+            return end;
+          }
+          return prev + 1;
+        });
+      }, 30);
+      return () => clearInterval(interval); // Evita múltiples intervalos
+    }
+  }, [isVisible, count, end]);
+
+  return (
+    <div className="col" ref={ref}>
+      <h2>{count}+</h2>
+      <p>{label}</p>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -8,6 +49,7 @@ export default function Home() {
       <BootstrapClient />
 
       <div className="background">
+        <div className="overlay"></div> {/* <- Capa oscura */}
         <div className="first-section">
           <h1 className="primary-tittle">Somos la empresa Soluciones Tecnológicas Danyris</h1>
         </div>
@@ -25,86 +67,76 @@ export default function Home() {
 
       <div className="container text-center">
         <div className="row">
-          <div className="col">
-            <h1 className="tittle-numbers">+80</h1>
-            <span className="font-numbers">soluciones</span>
-          </div>
-          <div className="col">
-            <h1 className="tittle-numbers">98</h1>
-            <span className="font-numbers">proyectos</span>
-          </div>
-          <div className="col">
-            <h1 className="tittle-numbers">+90</h1>
-            <span className="font-numbers">Clientes satisfechos</span>
-          </div>
+          <Counter end={80} label="Soluciones" />
+          <Counter end={98} label="Proyectos" />
+          <Counter end={90} label="Clientes satisfechos" />
         </div>
       </div>
 
-      <div className="border"></div>
-
-      <div className="container text-center block">
-        <h1 className="font-tittle2">LO QUE OFRECEMOS</h1>
-        <div className="row g-2">
-          <div className="col-6">
-            <div className="p-3">
-              <img className="image-services" src="./img/services01.webp" />
-              <span className="font-li3">Outsourcing TI</span>
-              <p className="font-des">Nos encargamos de brindar Outsourcing a todo nivel...</p>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="p-3">
-              <img className="image-services" src="./img/services03.webp" />
-              <span className="font-li3">Soporte Técnico</span>
-              <p className="font-des">Mantenimiento correctivo y preventivo...</p>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="p-3">
-              <img className="image-services" src="./img/services02-1.webp" />
-              <span className="font-li3">Licenciamiento de Software</span>
-              <p className="font-des">Tenemos las mejores soluciones de antivirus...</p>
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="p-3">
-              <img className="image-services" src="./img/services05.webp" />
-              <span className="font-li3">Desarrollo de páginas web</span>
-              <p className="font-des">Desarrollamos tu Página web para presentar tus productos...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="border"></div>
-      <h1 className='tittle-marcas'>Trabajamos con las mejores marcas</h1>
-
-
-      <div class="container text-center">
-        <div class="row row-cols-3">
-          {/* <!-- Carousel 0 --> */}
-          <div class="col">
-            <div id="carousel0" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
+      <div className="container text-center my-5">
+        <h1 className="section-title mb-4">LO QUE OFRECEMOS</h1>
+        <div className="row g-4">
+          {[
+            {
+              img: './img/services01.webp',
+              title: 'Outsourcing TI',
+              desc: 'Nos encargamos de brindar Outsourcing a todo nivel...',
+            },
+            {
+              img: './img/services03.webp',
+              title: 'Soporte Técnico',
+              desc: 'Mantenimiento correctivo y preventivo...',
+            },
+            {
+              img: './img/services02-1.webp',
+              title: 'Licenciamiento de Software',
+              desc: 'Tenemos las mejores soluciones de antivirus...',
+            },
+            {
+              img: './img/services05.webp',
+              title: 'Desarrollo de páginas web',
+              desc: 'Desarrollamos tu Página web para presentar tus productos...',
+            },
+          ].map((s, i) => (
+            <div className="col-12 col-md-6" key={i}>
+              <div className="card h-100 shadow-sm border-0">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  className="card-img-top img-fluid rounded-top"
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
+                <div className="card-body9">
+                  <h5 className="card-title">{s.title}</h5>
+                  <p className="card-text">{s.desc}</p>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel0" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel0" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+
+
+      <h1 className="tittle-marcas">Trabajamos con las mejores marcas</h1>
+      <div class="container text-center">
+        <div class="row row-cols-3">
+
+          {/* <!-- Carousel 0 --> */}
+          <div class="col">
+            <div id="carousel0" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="/img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
+                </div>
+                <div className="carousel-item">
+                  <img src="/img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+                </div>
+                <div className="carousel-item">
+                  <img src="/img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                </div>
+              </div>
+            </div></div>
+
 
           {/* <!-- Carousel 1 --> */}
           <div class="col">
@@ -120,14 +152,7 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -145,14 +170,7 @@ export default function Home() {
                   <img src="./img/logos/logo-kaspersky.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -170,20 +188,13 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
           {/* <!-- Carousel 4 --> */}
           <div class="col">
-            <div id="carousel4" class="carousel slide active" data-bs-ride="carousel" data-bs-interval="2000">
+            <div id="carousel4" class="carousel slide " data-bs-ride="carousel" data-bs-interval="2000">
               <div class="carousel-inner active">
                 <div class="carousel-item active">
                   <img src="./img/logos/logo-tp-link.png" class="d-block w-100" alt="..." />
@@ -195,14 +206,7 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel4" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
             </div>
           </div>
 
@@ -220,20 +224,55 @@ export default function Home() {
                   <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel5" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel5" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+
+            </div>
+          </div></div></div>
+
+      <div className="container px-4 text-center contactenos-container2">
+        <div className="row gx-5">
+          <div className="col contactenos-container">
+            <div className="p-3">
+              <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
+              <p className="par-contactenos">
+                Contamos con más de 9 años en el mercado nacional, brindando seguridad y calidad con las mejores soluciones.
+              </p>
+              <h2 className="tittle-contactenos2">Contáctanos rápido</h2>
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-person-fill"></i></span>
+                <input type="text" className="form-control" placeholder="Nombre de Contacto" />
+              </div>
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-building"></i></span>
+                <input type="text" className="form-control" placeholder="Empresa" />
+              </div>
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-envelope-fill"></i></span>
+                <input type="text" className="form-control" placeholder="Correo" />
+              </div>
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-phone-fill"></i></span>
+                <input type="text" className="form-control" placeholder="Celular" />
+              </div>
+              <div className="input-group mb-3">
+                <span className="input-group-text"><i className="bi bi-chat-left-dots-fill"></i></span>
+                <input type="text" className="form-control" placeholder="Mensaje" />
+              </div>
+              <div className="input-group mb-3">
+                <input type="text" className="form-control" placeholder="Elige un servicio" />
+                <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Servicios
+                </button>
+                <ul className="dropdown-menu">
+                  {['Cloud Computing', 'Networking y Cableado Estructurado', 'Equipamiento', 'Licenciamiento y Servicios', 'Help Desk'].map((service, idx) => (
+                    <li key={idx}><a className="dropdown-item" href="#">{service}</a></li>
+                  ))}
+                </ul>
+              </div>
+              <button className="button-line">Enviar</button>
             </div>
           </div>
         </div>
       </div>
-
-
     </>
   );
 }

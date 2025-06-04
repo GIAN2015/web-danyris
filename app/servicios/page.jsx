@@ -2,31 +2,36 @@
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+ 
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Servicios() {
     return (
         <>
-            <div className="background-services">
+            <div className="background-services py-5 text-white text-center">
+                <div className="overlay"></div> {/* <- Capa oscura */}
                 <div className="first-section">
-                    <h1 className="primary-servicios">Servicios</h1>
+                    <h1 className="primary-services">Servicios</h1>
+                     <div className="container"></div>
                 </div>
-                <div className="container"></div>
             </div>
 
             <div className="container">
                 <h2 className="text-des">Nosotros resolvemos problemas reales</h2>
             </div>
 
-            <div className="container-servicios">
+            <div className="container-servicios" id="accordionServicios">
                 {/* Servicio 1 */}
                 <div className="card">
                     <div className="card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false">
                         <h5 className="card-title">Cloud Computing </h5>
                         <p className="card-text">Ofrecemos soluciones en la nube escalables y seguras para empresas.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse1">
+                        <div className="collapse" id="collapse1" data-bs-parent="#accordionServicios">
                             <div className="card card-body">
                                 <ul>
                                     <li className="list-item-servicio">SaaS</li>
@@ -49,7 +54,7 @@ export default function Servicios() {
                         <h5 className="card-title">Networking y Cableado Estructurado</h5>
                         <p className="card-text">Diseñamos e instalamos redes eficientes y organizadas.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse2">
+                        <div className="collapse" id="collapse2" data-bs-parent="#accordionServicios">
                             <div className="card card-body1 card-body">
                                 <li className="list-item-servicio">Switches</li>
                                 <li className="list-item-servicio">Diseño e implementación de redes</li>
@@ -66,7 +71,7 @@ export default function Servicios() {
                         <h5 className="card-title">Equipamiento</h5>
                         <p className="card-text">Suministro de equipos tecnológicos de calidad.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse3">
+                        <div className="collapse" id="collapse3" data-bs-parent="#accordionServicios">
                             <div className="card card-body2 card-body">
                                 <li className="list-item-servicio">PCs</li>
                                 <li className="list-item-servicio">Workstation</li>
@@ -87,7 +92,7 @@ export default function Servicios() {
                         <h5 className="card-title">Licenciamiento y Servicios</h5>
                         <p className="card-text">Distribuimos software original y brindamos soporte técnico.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse4">
+                        <div className="collapse" id="collapse4" data-bs-parent="#accordionServicios">
                             <div className="card card-body3 card-body">
                                 <ul>
                                     <li className="list-item-servicio">Microsoft 365 Business</li>
@@ -107,7 +112,7 @@ export default function Servicios() {
                         <h5 className="card-title">Help Desk</h5>
                         <p className="card-text">Atención rápida y eficiente a incidentes tecnológicos.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse5">
+                        <div className="collapse" id="collapse5" data-bs-parent="#accordionServicios">
                             <div className="card card-body4 card-body">
                                 <ul>
                                     <li className="list-item-servicio">Soporte remoto o presencial para resolver problemas técnicos del día a día.</li>
@@ -125,7 +130,7 @@ export default function Servicios() {
                         <p className="card-text">Creamos plataformas digitales personalizadas y funcionales.</p>
                         <div className='flecha'>
                             <i className="bi bi-caret-down-fill"></i></div>
-                        <div className="collapse" id="collapse6">
+                        <div className="collapse" id="collapse6" data-bs-parent="#accordionServicios">
                             <div className="card card-body5 card-body">
                                 <ul>
                                     <li className="list-item-servicio"> Sitios web responsivos, tiendas virtuales, apps móviles para iOS/Android.</li>
@@ -142,7 +147,7 @@ export default function Servicios() {
                         <h5 className="card-title">Consultoría de software y SAP B1 for Hana</h5>
                         <p className="card-text">Asesoría especializada en implementación y soporte de software empresarial.</p>
                         <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse7">
+                        <div className="collapse" id="collapse7" data-bs-parent="#accordionServicios">
                             <div className="card card-body6">
                                 <ul>
                                     <li className="list-item-servicio"> Optimización de procesos empresariales con SAP Business One y soluciones a medida.
@@ -155,4 +160,7 @@ export default function Servicios() {
             </div>
         </>
     );
+
 }
+
+

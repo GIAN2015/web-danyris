@@ -27,7 +27,6 @@
 }
 
 
-
 .font-custom:hover {
   color: darkgrey
 }
@@ -41,6 +40,71 @@
 .text-decoration {
   font-family: 'Oxanium', Sans-serif;
   font-weight: 400;
+}
+
+.background-services {
+ 
+  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0cqhs solid #33618D;
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  text-align: end;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%)
+}
+
+.background-services .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7; /* similar a brightness(60%) */
+  z-index: 1;
+}
+
+.primary-services {
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  z-index: 3;
+  position: relative;
+
+
+}
+
+.primary-services {
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  z-index: 2;
+  position: relative;
+
+
+}
+
+.primary-contactenos{
+color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  z-index: 2;
+  position: relative;
+  
+}
+
+
+.text-des{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  font-size: larger;
+  margin-top: 20px;
+  
 }
 
 .text-decoration:hover {
@@ -131,6 +195,14 @@ a {
   font-weight: 900;
   color: white;
   font-size: 5rem;
+
+   color: white;
+  font-family: "Oxanium", Sans-serif;
+  
+
+  z-index: 3;
+  position: relative;
+
 }
 
 .btn-primary {
@@ -143,7 +215,10 @@ a {
   border-radius: 50px;
   transition: transform 0.3s ease;
   height: 60px;
+   z-index: 3;
+   position: relative;
   width: 200px;
+  
 }
 
 
@@ -178,8 +253,19 @@ a {
   display: flex;
   text-align: end;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  filter: brightness(60%);
+ 
 
+}
+
+.background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5; /* similar a brightness(60%) */
+  z-index: 1;
 }
 
 .font-button {
@@ -300,16 +386,8 @@ a {
 
 .btn {
 
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 30px;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
+
+
 }
 
 .prev {
@@ -335,24 +413,7 @@ a {
   margin-top: 20px;
 }
 
-.background-services{
-  background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 30vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
 
-.primary-servicios{
-  color: white;
-  font-family: "Oxanium", Sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-}
 
 .text-des{
   font-family: "Oxanium", Sans-serif;
@@ -362,6 +423,277 @@ a {
 }
 
 /* Estilos comunes para todas las tarjetas */
+/* ======= */
+
+
+/* PAGINA DEL ABOUT  */
+
+.about-background{
+   background-image: url('/img/about/diseno-depa-ginas-web-2jpg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0cqhs solid #33618D;
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  text-align: end;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+ 
+
+}
+
+.about-background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7; /* similar a brightness(60%) */
+  z-index: 1;
+}
+
+.about-tittle{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 100px;
+  text-decoration:  underline 5;
+ 
+}
+
+.img-about{
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.text-prueba{
+
+  text-align: justify;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 400;
+  color: black;
+  font-size: larger;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.tittle-about{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: #DEA123;
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-left: -220px;  
+}
+
+.align-self-start{
+  background-color: #33618D;
+  height:500px;
+  transition: 0.3s ease;
+ 
+}
+.align-self-start:hover{
+  filter: brightness(80%);
+
+}
+
+.align-self-end{
+  background-color: #DEA123;
+   height:500px;
+}
+.align-self-end:hover{
+  filter: brightness(60%);
+}
+
+.Section3{
+  width: 100%;
+}
+.tittle-section3{
+  text-decoration:   underline 3px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+
+
+.parrafo{
+  position: relative;
+  text-align: justifify;
+  padding: 100px;
+  margin-top: -100px;
+  color: whitesmoke;
+  font-size:  larger;
+}
+
+.button-mision{
+  
+  margin-left: 350px;
+  background-color: #DEA123;
+  color: white;
+  border-radius: 50px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  font-size: larger;
+  height: 60px;
+  width: 190px;
+}
+
+
+.button-mision:hover{
+  background-color: #DEA123;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.button-vision{
+    margin-left: 350px;
+  background-color: #33618D;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  font-size: larger;
+  height: 60px;
+  width: 190px;
+}
+
+.contactenos-background{
+  background-image: url('/img/contactenos/diseno-depa-ginas-web-2jpg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0cqhs solid #33618D;
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  text-align: end;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+}
+
+.contactenos-background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7; /* similar a brightness(60%) */
+  z-index: 1;
+}
+
+.button-line{
+  border-radius: 6px;
+  width: 100%;
+
+  color: white;
+  background-color: #33618D ;
+}
+
+.tittle-contactenos{
+  color: #33618D;
+  font-weight: 100;
+
+  font-size: 2.5rem;
+  text-align: start;
+ 
+}
+
+.par-contactenos{
+  color: #7A7A7A;
+
+  font-weight: 200;
+  font-size: larger;
+  text-align: start;
+}
+.contactenos-container1{
+padding: 50px;
+margin-left: 10%;
+}
+.contactenos-container{
+  background-color: #F5F5F5;
+  padding: 20px; 
+  border-radius: 20px;
+  border-left: #33618D 5px solid;
+}
+
+
+
+.contact-info {
+  font-family: 'Segoe UI', sans-serif;
+  color: #00477b;
+  max-width: 300px;
+  text-align: start;
+ 
+  margin-top: 10%;
+}
+
+.contact-info h5 {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #00477b;
+  margin-top: 2px;
+}
+
+.info-item .label {
+  font-size: 0.9rem;
+  color: #00477b;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  color: #00477b;
+  transition: color 0.3s;
+}
+
+.section-title{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  color: #DEA123;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.social-icons a:hover {
+  color: #007bff;
+}
+
+
 .card-body,
 .card-body1,
 .card-body2,
@@ -495,7 +827,9 @@ a {
   padding: 10px;
 }
 
-.bi{
+
+.bi-caret-down-fill{
+
   color: white;
   margin-left: 850px;
  
@@ -508,4 +842,120 @@ a {
   font-family: "Oxanium", Sans-serif;
   font-weight: 400;
   font-size: larger;
+
+}
+
+.header{
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+}
+
+
+.contactenos-container2{
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar-scrolled {
+  background-color: rgba(0, 0, 50, 0.9); /* Puedes cambiar el color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-footer {
+  animation: slideDown 1s ease-out;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.politica{
+  color: white;
+}
+
+.tittle-numbers {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.font-numbers {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.container.text-center .row > div.col {
+  margin: 2rem 0;
+}
+
+.container.text-center h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #00477b;
+  margin-bottom: 1rem;
+}
+
+.container.text-center p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #495057;
+
+}
+
+.primary-servicios{
+  color: white;
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.text-des{
+  font-family: "Oxanium", Sans-serif;
+  font-weight: 700;
+  font-size: larger;
+  margin-top: 20px;
+  font-size: 3rem;
+  color: #00477b;
+  margin-left: 210px;
 }
