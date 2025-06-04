@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import emailjs from 'emailjs-com';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
 
@@ -44,6 +45,27 @@ function Counter({ end, label }) {
 }
 
 export default function Home() {
+   const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_f8xf7xk', 'template_jviil2p', form.current, 'XyvI8lbXzQRrGzJWs')
+            .then((result) => {
+                console.log(result.text);
+                alert("Mensaje enviado con éxito.");
+            }, (error) => {
+                console.log(error.text);
+                alert("Hubo un error al enviar el mensaje.");
+            });
+    };
+
+    const [servicio, setServicio] = useState("Elige un servicio");
+
+
+    const handleServicioChange = (e) => {
+        setServicio(e.target.innerText);
+    };
   return (
     <>
       <BootstrapClient />
@@ -233,42 +255,71 @@ export default function Home() {
           <div className="col contactenos-container">
             <div className="p-3">
               <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
-              <p className="par-contactenos">
-                Contamos con más de 9 años en el mercado nacional, brindando seguridad y calidad con las mejores soluciones.
-              </p>
-              <h2 className="tittle-contactenos2">Contáctanos rápido</h2>
-              <div className="input-group mb-3">
-                <span className="input-group-text"><i className="bi bi-person-fill"></i></span>
-                <input type="text" className="form-control" placeholder="Nombre de Contacto" />
-              </div>
-              <div className="input-group mb-3">
-                <span className="input-group-text"><i className="bi bi-building"></i></span>
-                <input type="text" className="form-control" placeholder="Empresa" />
-              </div>
-              <div className="input-group mb-3">
-                <span className="input-group-text"><i className="bi bi-envelope-fill"></i></span>
-                <input type="text" className="form-control" placeholder="Correo" />
-              </div>
-              <div className="input-group mb-3">
-                <span className="input-group-text"><i className="bi bi-phone-fill"></i></span>
-                <input type="text" className="form-control" placeholder="Celular" />
-              </div>
-              <div className="input-group mb-3">
-                <span className="input-group-text"><i className="bi bi-chat-left-dots-fill"></i></span>
-                <input type="text" className="form-control" placeholder="Mensaje" />
-              </div>
-              <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Elige un servicio" />
-                <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                  Servicios
-                </button>
-                <ul className="dropdown-menu">
-                  {['Cloud Computing', 'Networking y Cableado Estructurado', 'Equipamiento', 'Licenciamiento y Servicios', 'Help Desk'].map((service, idx) => (
-                    <li key={idx}><a className="dropdown-item" href="#">{service}</a></li>
-                  ))}
-                </ul>
-              </div>
-              <button className="button-line">Enviar</button>
+              <form ref={form} onSubmit={sendEmail} className="form-contactenos">
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi bi-person-fill"></i>
+                  </span>
+                  <input type="text" className="form-control" name="nombre" placeholder="Nombre de Contacto" required />
+                </div>
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi bi-building"></i>
+                  </span>
+                  <input type="text" className="form-control" name="empresa" placeholder="Empresa" required />
+                </div>
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi bi-envelope-fill"></i>
+                  </span>
+                  <input type="email" className="form-control" name="correo" placeholder="Correo" required />
+                </div>
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi bi-phone-fill"></i>
+                  </span>
+                  <input type="text" className="form-control" name="celular" placeholder="Celular" required />
+                </div>
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <i className="bi bi-chat-left-dots-fill"></i>
+                  </span>
+                  <input type="text" className="form-control" name="mensaje" placeholder="Mensaje" required />
+                </div>
+
+                <div className="input-group mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Elige un servicio"
+                    name="servicio"
+                    value={servicio}
+                    readOnly
+                  />
+                  <button
+                    className="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Servicios
+                  </button>
+                  <ul className="dropdown-menu dropdown-menu-end">
+                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Cloud Computing</button></li>
+                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Networking y Cableado Estructurado</button></li>
+                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Equipamiento</button></li>
+                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Licenciamiento y Servicios</button></li>
+                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Help Desk</button></li>
+                  </ul>
+
+                </div>
+
+                <button type="submit" className="button-line">Enviar</button>
+              </form>
             </div>
           </div>
         </div>
