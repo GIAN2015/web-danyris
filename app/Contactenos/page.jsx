@@ -1,15 +1,17 @@
 'use client';
+import dynamic from 'next/dynamic';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import BootstrapClient from './BootstrapClient';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { useRef, useState } from 'react'; // ← aquí agregas useState
+import { useRef, useState } from 'react'; 
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
 export default function Contactenos() {
     const form = useRef();
+    
     const [captchaToken, setCaptchaToken] = useState(null);
     const [servicio, setServicio] = useState("Elige un servicio");
     const sendEmail = (e) => {
