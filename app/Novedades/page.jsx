@@ -1,4 +1,4 @@
-import { resourceUsage } from "process";
+
 
 export default function Novedades() {
     return(
