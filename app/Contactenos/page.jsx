@@ -14,7 +14,7 @@ const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
 
 
-export default function Contactenos() {
+export default function contactenos() {
     useEffect(() => {
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }, []);

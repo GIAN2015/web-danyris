@@ -1,6 +1,6 @@
 
 
-export default function Novedades() {
+export default function novedades() {
     return(
          <section className="about-background py-5 text-white text-center">
                 <div className="overlay"></div> {/* <- Capa oscura */}
