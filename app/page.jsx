@@ -1,10 +1,13 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from 'emailjs-com';
+
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
+
 
 function Counter({ end, label }) {
   const [count, setCount] = useState(0);
@@ -45,30 +48,50 @@ function Counter({ end, label }) {
 }
 
 export default function Home() {
-   const form = useRef();
+  const form = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [servicio, setServicio] = useState("Elige un servicio");
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    if (!captchaToken) {
+      alert("Por favor completa el reCAPTCHA.");
+      return;
+    }
 
-        emailjs.sendForm('service_f8xf7xk', 'template_jviil2p', form.current, 'XyvI8lbXzQRrGzJWs')
-            .then((result) => {
-                console.log(result.text);
-                alert("Mensaje enviado con éxito.");
-            }, (error) => {
-                console.log(error.text);
-                alert("Hubo un error al enviar el mensaje.");
-            });
-    };
+    emailjs
+      .sendForm(
+        "service_f8xf7xk",
+        "template_jviil2p",
+        form.current,
+        "XyvI8lbXzQRrGzJWs"
+      )
+      .then(
+        (result) => {
+          alert("Mensaje enviado correctamente.");
+          console.log("Correo enviado", result.text);
+          form.current.reset();
+          setServicio("");
+          setCaptchaToken(null);
+        },
+        (error) => {
+          alert("Error al enviar el mensaje.");
+          console.error("Error al enviar correo", error.text);
+        }
+      );
+  };
 
-    const [servicio, setServicio] = useState("Elige un servicio");
 
 
-    const handleServicioChange = (e) => {
-        setServicio(e.target.innerText);
-    };
+
+  const handleServicioChange = (e) => {
+    setServicio(e.target.innerText);
+  };
   return (
+    
     <>
-      <BootstrapClient />
+          <BootstrapClient/>
+
 
       <div className="background">
         <div className="overlay"></div> {/* <- Capa oscura */}
@@ -77,7 +100,7 @@ export default function Home() {
         </div>
 
         <div className="second-section">
-          <a href="/about" className="text-decoration-none">
+          <a href="/nosotros" className="text-decoration-none">
             <button className="btn btn-primary">
               <span className="font-button">
                 Ver más <i className="fas fa-arrow-right"></i>
@@ -105,12 +128,12 @@ export default function Home() {
               desc: 'Nos encargamos de brindar Outsourcing a todo nivel...',
             },
             {
-              img: './img/services03.webp',
+              img: './img/services02-1.webp',
               title: 'Soporte Técnico',
               desc: 'Mantenimiento correctivo y preventivo...',
             },
             {
-              img: './img/services02-1.webp',
+              img: './img/services03.webp',
               title: 'Licenciamiento de Software',
               desc: 'Tenemos las mejores soluciones de antivirus...',
             },
@@ -140,115 +163,114 @@ export default function Home() {
 
 
       <h1 className="tittle-marcas">Trabajamos con las mejores marcas</h1>
-      <div class="container text-center">
-        <div class="row row-cols-3">
+      <div className="container text-center">
+        <div className="row row-cols-3">
 
-          {/* <!-- Carousel 0 --> */}
-          <div class="col">
+          {/* Carousel 0 */}
+          <div className="col">
             <div id="carousel0" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src="/img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
+                  <img src="./img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
                 </div>
                 <div className="carousel-item">
-                  <img src="/img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+                  <img src="./img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
                 </div>
                 <div className="carousel-item">
-                  <img src="/img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
                 </div>
               </div>
-            </div></div>
-
-
-          {/* <!-- Carousel 1 --> */}
-          <div class="col">
-            <div id="carousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-dell.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/Logo-Epson.png" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
-                </div>
-              </div>
-
             </div>
           </div>
 
-          {/* <!-- Carousel 2 --> */}
-          <div class="col">
-            <div id="carousel2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" class="d-block w-100" alt="..." />
+          {/* Carousel 1 */}
+          <div className="col">
+            <div id="carousel1" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="./img/logos/logo-dell.png" className="d-block w-100" alt="Dell" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-hp.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/Logo-Epson.png" className="d-block w-100" alt="Epson" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-kaspersky.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* <!-- Carousel 3 --> */}
-          <div class="col">
-            <div id="carousel3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./img/logos/Logo-Lenovo.png" class="d-block w-100" alt="..." />
+          {/* Carousel 2 */}
+          <div className="col">
+            <div id="carousel2" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="./img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-microsoft.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-hp.png" className="d-block w-100" alt="HP" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-kaspersky.png" className="d-block w-100" alt="Kaspersky" />
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* <!-- Carousel 4 --> */}
-          <div class="col">
-            <div id="carousel4" class="carousel slide " data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner active">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-tp-link.png" class="d-block w-100" alt="..." />
+          {/* Carousel 3 */}
+          <div className="col">
+            <div id="carousel3" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="./img/logos/Logo-Lenovo.png" className="d-block w-100" alt="Lenovo" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-trendnet.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-microsoft.png" className="d-block w-100" alt="Microsoft" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
                 </div>
               </div>
-
             </div>
           </div>
 
-          {/* <!-- Carousel 5 --> */}
-          <div class="col">
-            <div id="carousel5" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div class="carousel-inner active">
-                <div class="carousel-item active">
-                  <img src="./img/logos/logo-ubiquiti.png" class="d-block w-100" alt="..." />
+          {/* Carousel 4 */}
+          <div className="col">
+            <div id="carousel4" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="./img/logos/logo-tp-link.png" className="d-block w-100" alt="TP-Link" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-trendnet.png" className="d-block w-100" alt="Trendnet" />
                 </div>
-                <div class="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" class="d-block w-100" alt="..." />
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
                 </div>
               </div>
-
             </div>
-          </div></div></div>
+          </div>
+
+          {/* Carousel 5 */}
+          <div className="col">
+            <div id="carousel5" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src="./img/logos/logo-ubiquiti.png" className="d-block w-100" alt="Ubiquiti" />
+                </div>
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+                </div>
+                <div className="carousel-item">
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
 
       <div className="container px-4 text-center contactenos-container2">
         <div className="row gx-5">
@@ -257,38 +279,68 @@ export default function Home() {
               <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
               <form ref={form} onSubmit={sendEmail} className="form-contactenos">
                 <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
+                  <span className="input-group-text">
                     <i className="bi bi-person-fill"></i>
                   </span>
-                  <input type="text" className="form-control" name="nombre" placeholder="Nombre de Contacto" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="nombre"
+                    placeholder="Nombre de Contacto"
+                    required
+                  />
                 </div>
 
                 <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
+                  <span className="input-group-text">
                     <i className="bi bi-building"></i>
                   </span>
-                  <input type="text" className="form-control" name="empresa" placeholder="Empresa" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="empresa"
+                    placeholder="Empresa"
+                    required
+                  />
                 </div>
 
                 <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
+                  <span className="input-group-text">
                     <i className="bi bi-envelope-fill"></i>
                   </span>
-                  <input type="email" className="form-control" name="correo" placeholder="Correo" required />
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="correo"
+                    placeholder="Correo"
+                    required
+                  />
                 </div>
 
                 <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
+                  <span className="input-group-text">
                     <i className="bi bi-phone-fill"></i>
                   </span>
-                  <input type="text" className="form-control" name="celular" placeholder="Celular" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="celular"
+                    placeholder="Celular"
+                    required
+                  />
                 </div>
 
                 <div className="input-group mb-3">
-                  <span className="input-group-text" id="basic-addon1">
+                  <span className="input-group-text">
                     <i className="bi bi-chat-left-dots-fill"></i>
                   </span>
-                  <input type="text" className="form-control" name="mensaje" placeholder="Mensaje" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="mensaje"
+                    placeholder="Mensaje"
+                    required
+                  />
                 </div>
 
                 <div className="input-group mb-3">
@@ -309,13 +361,43 @@ export default function Home() {
                     Servicios
                   </button>
                   <ul className="dropdown-menu dropdown-menu-end">
-                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Cloud Computing</button></li>
-                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Networking y Cableado Estructurado</button></li>
-                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Equipamiento</button></li>
-                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Licenciamiento y Servicios</button></li>
-                    <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Help Desk</button></li>
-                  </ul>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Cloud Computing
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Networking y Cableado Estructurado
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Equipamiento
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Licenciamiento y Servicios
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Otro
+                      </button>
+                    </li>
 
+                  </ul>
+                </div>
+
+                {/* CAPTCHA en español */}
+                <div className="mb-3">
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    onChange={(token) => setCaptchaToken(token)}
+                    onExpired={() => setCaptchaToken(null)}
+                    hl="es" // para mostrarlo en español
+                  />
                 </div>
 
                 <button type="submit" className="button-line">Enviar</button>

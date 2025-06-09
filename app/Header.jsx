@@ -35,7 +35,7 @@ export default function Header() {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg ${scrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
+    <nav className={`navbar header navbar-expand-lg ${scrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           <img className='margin' src="/img/Logo_DANYRIS-Color-Horizontal-1024x212-1.png" alt="Logo Danyris" height="60" />
@@ -58,7 +58,7 @@ export default function Header() {
               <a className={`nav-link font-custom ${pathname === '/' ? 'active-link' : ''}`} href="/">Inicio</a>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/about' ? 'active-link' : ''}`} href="/about">Nosotros</a>
+              <a className={`nav-link font-custom ${pathname === '/about' ? 'active-link' : ''}`} href="/nosotros">Nosotros</a>
             </li>
             <li ref={dropdownRef} className={`nav-item dropdown${dropdownOpen ? ' show' : ''}`}>
               <a
@@ -85,10 +85,10 @@ export default function Header() {
               </ul>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/Contactenos' ? 'active-link' : ''}`} href="/Contactenos">Contáctenos</a>
+              <a className={`nav-link font-custom ${pathname === '/Contactenos' ? 'active-link' : ''}`} href="/contactenos">Contáctenos</a>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/news' ? 'active-link' : ''}`} href="/news">Novedades</a>
+              <a className={`nav-link font-custom ${pathname === '/news' ? 'active-link' : ''}`} href="/novedades">Novedades</a>
             </li>
           </ul>
         </div>

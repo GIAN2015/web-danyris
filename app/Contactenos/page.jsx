@@ -6,24 +6,43 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useRef, useState } from 'react'; // ← aquí agregas useState
 import emailjs from 'emailjs-com';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contactenos() {
     const form = useRef();
-
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const [servicio, setServicio] = useState("Elige un servicio");
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_f8xf7xk', 'template_jviil2p', form.current, 'XyvI8lbXzQRrGzJWs')
-            .then((result) => {
-                console.log(result.text);
-                alert("Mensaje enviado con éxito.");
-            }, (error) => {
-                console.log(error.text);
-                alert("Hubo un error al enviar el mensaje.");
-            });
+        if (!captchaToken) {
+            alert("Por favor completa el reCAPTCHA.");
+            return;
+        }
+
+        emailjs
+            .sendForm(
+                "service_f8xf7xk",
+                "template_jviil2p",
+                form.current,
+                "XyvI8lbXzQRrGzJWs"
+            )
+            .then(
+                (result) => {
+                    alert("Mensaje enviado correctamente.");
+                    console.log("Correo enviado", result.text);
+                    form.current.reset();
+                    setServicio("");
+                    setCaptchaToken(null);
+                },
+                (error) => {
+                    alert("Error al enviar el mensaje.");
+                    console.error("Error al enviar correo", error.text);
+                }
+            );
     };
 
-    const [servicio, setServicio] = useState("Elige un servicio");
+
 
 
     const handleServicioChange = (e) => {
@@ -49,38 +68,68 @@ export default function Contactenos() {
                             <h2 className="tittle-contactenos">Contáctanos rápido</h2>
                             <form ref={form} onSubmit={sendEmail} className="form-contactenos">
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text">
                                         <i className="bi bi-person-fill"></i>
                                     </span>
-                                    <input type="text" className="form-control" name="nombre" placeholder="Nombre de Contacto" required />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="nombre"
+                                        placeholder="Nombre de Contacto"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text">
                                         <i className="bi bi-building"></i>
                                     </span>
-                                    <input type="text" className="form-control" name="empresa" placeholder="Empresa" required />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="empresa"
+                                        placeholder="Empresa"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text">
                                         <i className="bi bi-envelope-fill"></i>
                                     </span>
-                                    <input type="email" className="form-control" name="correo" placeholder="Correo" required />
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        name="correo"
+                                        placeholder="Correo"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text">
                                         <i className="bi bi-phone-fill"></i>
                                     </span>
-                                    <input type="text" className="form-control" name="celular" placeholder="Celular" required />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="celular"
+                                        placeholder="Celular"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="input-group mb-3">
-                                    <span className="input-group-text" id="basic-addon1">
+                                    <span className="input-group-text">
                                         <i className="bi bi-chat-left-dots-fill"></i>
                                     </span>
-                                    <input type="text" className="form-control" name="mensaje" placeholder="Mensaje" required />
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="mensaje"
+                                        placeholder="Mensaje"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="input-group mb-3">
@@ -101,13 +150,42 @@ export default function Contactenos() {
                                         Servicios
                                     </button>
                                     <ul className="dropdown-menu dropdown-menu-end">
-                                        <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Cloud Computing</button></li>
-                                        <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Networking y Cableado Estructurado</button></li>
-                                        <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Equipamiento</button></li>
-                                        <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Licenciamiento y Servicios</button></li>
-                                        <li><button type="button" className="dropdown-item" onClick={handleServicioChange}>Help Desk</button></li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Cloud Computing
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Networking y Cableado Estructurado
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Equipamiento
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Licenciamiento y Servicios
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Help Desk
+                                            </button>
+                                        </li>
                                     </ul>
+                                </div>
 
+                                {/* CAPTCHA en español */}
+                                <div className="mb-3">
+                                    <ReCAPTCHA
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                        onChange={(token) => setCaptchaToken(token)}
+                                        onExpired={() => setCaptchaToken(null)}
+                                        hl="es" // para mostrarlo en español
+                                    />
                                 </div>
 
                                 <button type="submit" className="button-line">Enviar</button>
@@ -153,9 +231,9 @@ export default function Contactenos() {
 
                             <h5>SÍGUENOS</h5>
                             <div class="social-icons">
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/soluciones-tecnologicas-danyris/"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://www.facebook.com/stdanyris"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/stdanyris/"><i class="bi bi-instagram"></i></a>
                             </div>
                         </div>
 

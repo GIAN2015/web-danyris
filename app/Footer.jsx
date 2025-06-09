@@ -35,7 +35,7 @@ export default function Footer() {
             <p className={`font-tittle fade-up ${isVisible ? 'visible' : ''}`}>
               En DANYRIS entendemos lo importante que es la entrega de un buen servicio hacia nuestros clientes, somos apasionados por la calidad y excelencia del servicio, estamos totalmente comprometidos con nuestros clientes.
             </p>
-            <img src="/img/CCL.png" alt="CCL" style={{ maxWidth: "150px" }} />
+            <img src="/img/LOGO ASOCIADOS.jpg" alt="CCL" style={{ maxWidth: "150px" }} />
             <div className="d-flex gap-2 mt-3">
               <img src="/img/osce.webp" alt="OSCE" style={{ maxWidth: "150px" }} />
             </div>
@@ -49,7 +49,7 @@ export default function Footer() {
               <li className={`punto fade-up ${isVisible ? 'visible' : ''}`}><p className='politica'>Política antisoborno</p></li>
             </ul>
             <h6 className={`mt-4 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Libro de reclamaciones</h6>
-            <a href="/libro-reclamaciones" className="text-decoration-none">
+            <a href="/libro_reclamaciones" className="text-decoration-none">
               <img src="/img/libro_reclamaciones.png" alt="Libro" style={{ maxWidth: "150px" }} />
             </a>
             <h6 className={`mt-4 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>SÍGUENOS EN:</h6>
@@ -64,7 +64,7 @@ export default function Footer() {
           <div className="col-md-3 mb-4">
             <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Menú</h5>
             <ul className="list-unstyled">
-              {["Inicio", "Nosotros", "Servicios", "Contáctenos", "Novedades"].map((text, i) => (
+              {["Inicio", "Nosotros", "Servicios", "Contactenos", "Novedades"].map((text, i) => (
                 <li key={i} className={`punto fade-up ${isVisible ? 'visible' : ''}`}>
                   <a className="font-li" href={`/${text.toLowerCase() === 'inicio' ? '' : text.toLowerCase()}`}>{text}</a>
                 </li>

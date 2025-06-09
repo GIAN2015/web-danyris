@@ -22,9 +22,7 @@
   color: white;
 }
 
-.header {
-  position: relative;
-}
+
 
 
 .font-custom:hover {
@@ -43,7 +41,7 @@
 }
 
 .background-services {
- 
+
   background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
   background-size: cover;
   background-position: center;
@@ -62,7 +60,8 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.7; /* similar a brightness(60%) */
+  opacity: 0.7;
+  /* similar a brightness(60%) */
   z-index: 1;
 }
 
@@ -88,23 +87,23 @@
 
 }
 
-.primary-contactenos{
-color: white;
+.primary-contactenos {
+  color: white;
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   font-size: 3rem;
   z-index: 2;
   position: relative;
-  
+
 }
 
 
-.text-des{
+.text-des {
   font-family: "Oxanium", Sans-serif;
   font-weight: 400;
   font-size: larger;
   margin-top: 20px;
-  
+
 }
 
 .text-decoration:hover {
@@ -131,6 +130,16 @@ color: white;
 .navbar-nav {
   margin-left: 200px
 }
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: none;
+  }}
 
 /* Footer styles */
 .bg-footer {
@@ -196,9 +205,9 @@ a {
   color: white;
   font-size: 5rem;
 
-   color: white;
+  color: white;
   font-family: "Oxanium", Sans-serif;
-  
+
 
   z-index: 3;
   position: relative;
@@ -215,10 +224,10 @@ a {
   border-radius: 50px;
   transition: transform 0.3s ease;
   height: 60px;
-   z-index: 3;
-   position: relative;
+  z-index: 3;
+  position: relative;
   width: 200px;
-  
+
 }
 
 
@@ -253,7 +262,7 @@ a {
   display: flex;
   text-align: end;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
- 
+
 
 }
 
@@ -264,7 +273,8 @@ a {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.5; /* similar a brightness(60%) */
+  opacity: 0.5;
+  /* similar a brightness(60%) */
   z-index: 1;
 }
 
@@ -384,11 +394,7 @@ a {
 
 }
 
-.btn {
-
-
-
-}
+.btn {}
 
 .prev {
   left: 50px;
@@ -400,6 +406,20 @@ a {
 
 .btn:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+.card-img-top {
+  height: auto;
+  max-height: 200px; /* Para desktop */
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Para móviles puedes usar media queries */
+@media (max-width: 768px) {
+  .card-img-top {
+    max-height: 150px;
+  }
 }
 
 /* ENDCAROUSEL */
@@ -415,7 +435,7 @@ a {
 
 
 
-.text-des{
+.text-des {
   font-family: "Oxanium", Sans-serif;
   font-weight: 400;
   font-size: larger;
@@ -428,8 +448,8 @@ a {
 
 /* PAGINA DEL ABOUT  */
 
-.about-background{
-   background-image: url('/img/about/diseno-depa-ginas-web-2jpg.jpg');
+.about-background {
+  background-image: url('/img/about/diseno-depa-ginas-web-2jpg.jpg');
   background-size: cover;
   background-position: center;
   border-bottom: 0cqhs solid #33618D;
@@ -438,7 +458,7 @@ a {
   display: flex;
   text-align: end;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
- 
+
 
 }
 
@@ -449,11 +469,12 @@ a {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.7; /* similar a brightness(60%) */
+  opacity: 0.7;
+  /* similar a brightness(60%) */
   z-index: 1;
 }
 
-.about-tittle{
+.about-tittle {
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   color: white;
@@ -461,11 +482,11 @@ a {
   text-align: center;
   margin-top: 20px;
   margin-left: 100px;
-  text-decoration:  underline 5;
- 
+  text-decoration: underline 5;
+
 }
 
-.img-about{
+.img-about {
   width: 500px;
   height: 400px;
   object-fit: cover;
@@ -473,7 +494,7 @@ a {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-.text-prueba{
+.text-prueba {
 
   text-align: justify;
   font-family: "Oxanium", Sans-serif;
@@ -484,39 +505,42 @@ a {
   margin-top: 20px;
 }
 
-.tittle-about{
+.tittle-about {
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   color: #DEA123;
   font-size: 3rem;
   margin-top: 20px;
-  margin-left: -220px;  
+  margin-left: -220px;
 }
 
-.align-self-start{
+.align-self-start {
   background-color: #33618D;
-  height:500px;
+  height: 500px;
   transition: 0.3s ease;
- 
+
 }
-.align-self-start:hover{
+
+.align-self-start:hover {
   filter: brightness(80%);
 
 }
 
-.align-self-end{
+.align-self-end {
   background-color: #DEA123;
-   height:500px;
+  height: 500px;
 }
-.align-self-end:hover{
+
+.align-self-end:hover {
   filter: brightness(60%);
 }
 
-.Section3{
+.Section3 {
   width: 100%;
 }
-.tittle-section3{
-  text-decoration:   underline 3px;
+
+.tittle-section3 {
+  text-decoration: underline 3px;
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   color: white;
@@ -527,17 +551,17 @@ a {
 
 
 
-.parrafo{
+.parrafo {
   position: relative;
   text-align: justifify;
   padding: 100px;
   margin-top: -100px;
   color: whitesmoke;
-  font-size:  larger;
+  font-size: larger;
 }
 
-.button-mision{
-  
+.button-mision {
+
   margin-left: 350px;
   background-color: #DEA123;
   color: white;
@@ -551,7 +575,7 @@ a {
 }
 
 
-.button-mision:hover{
+.button-mision:hover {
   background-color: #DEA123;
   color: white;
   border-radius: 50px;
@@ -561,8 +585,8 @@ a {
   transition: transform 0.3s ease;
 }
 
-.button-vision{
-    margin-left: 350px;
+.button-vision {
+  margin-left: 350px;
   background-color: #33618D;
   color: white;
   border-radius: 50px;
@@ -575,7 +599,7 @@ a {
   width: 190px;
 }
 
-.contactenos-background{
+.contactenos-background {
   background-image: url('/img/contactenos/diseno-depa-ginas-web-2jpg.jpg');
   background-size: cover;
   background-position: center;
@@ -595,41 +619,44 @@ a {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.7; /* similar a brightness(60%) */
+  opacity: 0.7;
+  /* similar a brightness(60%) */
   z-index: 1;
 }
 
-.button-line{
+.button-line {
   border-radius: 6px;
   width: 100%;
 
   color: white;
-  background-color: #33618D ;
+  background-color: #33618D;
 }
 
-.tittle-contactenos{
+.tittle-contactenos {
   color: #33618D;
   font-weight: 100;
 
   font-size: 2.5rem;
   text-align: start;
- 
+
 }
 
-.par-contactenos{
+.par-contactenos {
   color: #7A7A7A;
 
   font-weight: 200;
   font-size: larger;
   text-align: start;
 }
-.contactenos-container1{
-padding: 50px;
-margin-left: 10%;
+
+.contactenos-container1 {
+  padding: 50px;
+  margin-left: 10%;
 }
-.contactenos-container{
+
+.contactenos-container {
   background-color: #F5F5F5;
-  padding: 20px; 
+  padding: 20px;
   border-radius: 20px;
   border-left: #33618D 5px solid;
 }
@@ -641,7 +668,7 @@ margin-left: 10%;
   color: #00477b;
   max-width: 300px;
   text-align: start;
- 
+
   margin-top: 10%;
 }
 
@@ -682,13 +709,14 @@ margin-left: 10%;
   transition: color 0.3s;
 }
 
-.section-title{
+.section-title {
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   color: #DEA123;
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 .social-icons a:hover {
   color: #007bff;
 }
@@ -708,7 +736,10 @@ margin-left: 10%;
 .card-body::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
   background-size: cover;
   background-position: center;
@@ -719,21 +750,27 @@ margin-left: 10%;
 .card-body1::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/004.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(40%);
-  
 
-  
+
+
   z-index: 0;
 }
 
 .card-body2::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/imagen-de-informacion-1.jpg');
   background-size: cover;
   background-position: center;
@@ -744,7 +781,10 @@ margin-left: 10%;
 .card-body3::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/portada-desarrollo-de-pagina-web.jpg');
   background-size: cover;
   background-position: center;
@@ -755,7 +795,10 @@ margin-left: 10%;
 .card-body4::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/Proyecto-nuevo-1.jpg');
   background-size: cover;
   background-position: center;
@@ -766,7 +809,10 @@ margin-left: 10%;
 .card-body5::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/equipamiento-TI-scaled.webp');
   background-size: cover;
   background-position: center;
@@ -777,7 +823,10 @@ margin-left: 10%;
 .card-body6::before {
   content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url('/img/servicios/licencias-de-software-1.jpg');
   background-size: cover;
   background-position: center;
@@ -786,13 +835,13 @@ margin-left: 10%;
 }
 
 /* Asegura que el contenido esté encima del fondo */
-.card-body > *,
-.card-body1 > *,
-.card-body2 > *,
-.card-body3 > *,
-.card-body4 > *,
-.card-body5 > *,
-.card-body6 > * {
+.card-body>*,
+.card-body1>*,
+.card-body2>*,
+.card-body3>*,
+.card-body4>*,
+.card-body5>*,
+.card-body6>* {
   position: relative;
   z-index: 1;
 }
@@ -828,16 +877,16 @@ margin-left: 10%;
 }
 
 
-.bi-caret-down-fill{
+.bi-caret-down-fill {
 
   color: white;
   margin-left: 850px;
- 
+
 
 
 }
 
-.list-item-servicio{
+.list-item-servicio {
   color: white;
   font-family: "Oxanium", Sans-serif;
   font-weight: 400;
@@ -845,10 +894,11 @@ margin-left: 10%;
 
 }
 
-.header{
+.header {
   position: fixed;
   z-index: 5;
   width: 100%;
+  
 }
 
 .navbar-transparent {
@@ -857,7 +907,7 @@ margin-left: 10%;
 }
 
 
-.contactenos-container2{
+.contactenos-container2 {
   width: 50%;
 }
 
@@ -877,7 +927,8 @@ margin-left: 10%;
 
 
 .navbar-scrolled {
-  background-color: rgba(0, 0, 50, 0.9); /* Puedes cambiar el color */
+  background-color: rgba(0, 0, 50, 0.9);
+  /* Puedes cambiar el color */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.4s ease, box-shadow 0.3s ease;
 }
@@ -888,6 +939,7 @@ margin-left: 10%;
     opacity: 0;
     transform: translateY(-50px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -909,7 +961,7 @@ margin-left: 10%;
   transform: translateY(0);
 }
 
-.politica{
+.politica {
   color: white;
 }
 
@@ -925,7 +977,7 @@ margin-left: 10%;
   color: #ccc;
 }
 
-.container.text-center .row > div.col {
+.container.text-center .row>div.col {
   margin: 2rem 0;
 }
 
@@ -943,14 +995,14 @@ margin-left: 10%;
 
 }
 
-.primary-servicios{
+.primary-servicios {
   color: white;
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   font-size: 3rem;
 }
 
-.text-des{
+.text-des {
   font-family: "Oxanium", Sans-serif;
   font-weight: 700;
   font-size: larger;
@@ -958,4 +1010,64 @@ margin-left: 10%;
   font-size: 3rem;
   color: #00477b;
   margin-left: 210px;
+}
+
+.form-reclamo {
+  max-width: 700px;
+  
+  margin: 0 auto;
+
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-reclamo h4 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-reclamo input,
+.form-reclamo select,
+.form-reclamo textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.form-reclamo textarea {
+  resize: vertical;
+}
+
+.form-reclamo button {
+  width: 100%;
+  background-color: #21598d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-reclamo button:hover {
+  background-color: #19436b;
+}
+
+.brand-img {
+  max-height: 100px;
+  object-fit: contain;
+  padding: 0.5rem;
 }

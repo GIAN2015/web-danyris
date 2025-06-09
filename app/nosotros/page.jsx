@@ -34,14 +34,14 @@ export default function About() {
                             <p>
                                 Obtener clientes satisfechos gracias a nuestro compromiso y dedicación. Garantizar la calidad y excelencia de nuestros servicios y productos.
                             </p>
-                            <button className="btn btn-primary">Ver Servicios</button>
+                           <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
                         </div>
                         <div className="col-md-6 mb-4">
                             <h3 className="mb-3">Nuestra Visión</h3>
                             <p>
                                 Consolidarnos como la mejor alternativa de soluciones tecnológicas en el mercado nacional, con los más altos certificados en informática.
                             </p>
-                            <button className="btn btn-primary">Ver Servicios</button>
+                               <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
                         </div>
                     </div>
                 </div>
