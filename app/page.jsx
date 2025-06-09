@@ -7,6 +7,8 @@ import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
 
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
 
 
 function Counter({ end, label }) {
@@ -399,7 +401,7 @@ export default function Home() {
                 {/* CAPTCHA en español */}
                 <div className="mb-3">
                   <ReCAPTCHA
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    sitekey={siteKey}
                     onChange={(token) => setCaptchaToken(token)}
                     onExpired={() => setCaptchaToken(null)}
                     hl="es" // para mostrarlo en español

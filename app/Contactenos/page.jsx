@@ -8,7 +8,7 @@ import emailjs from '@emailjs/browser';
 
 const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
 
-
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 
 
@@ -190,7 +190,7 @@ export default function Contactenos() {
                                 {/* CAPTCHA en español */}
                                 <div className="mb-3">
                                     <ReCAPTCHA
-                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                          sitekey={siteKey}
                                         onChange={(token) => setCaptchaToken(token)}
                                         onExpired={() => setCaptchaToken(null)}
                                         hl="es" // para mostrarlo en español
