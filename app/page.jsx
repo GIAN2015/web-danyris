@@ -15,6 +15,7 @@ const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 function Counter({ end, label }) {
   const [count, setCount] = useState(0);
   const ref = useRef();
+  const recaptchaRef = useRef(); 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

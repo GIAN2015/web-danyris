@@ -19,7 +19,7 @@ export default function Contactenos() {
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }, []);
     const form = useRef();
-
+const recaptchaRef = useRef(); 
     const [captchaToken, setCaptchaToken] = useState(null);
     const [servicio, setServicio] = useState("Elige un servicio");
     const sendEmail = (e) => {
