@@ -1,15 +1,16 @@
 'use client';
 
 
+
+import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
- 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 export default function Servicios() {
+     useEffect(() => {
+    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+  }, []);
     return (
         <>
             <div className="background-services py-5 text-white text-center">

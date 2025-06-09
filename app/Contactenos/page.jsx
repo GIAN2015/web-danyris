@@ -1,13 +1,12 @@
 'use client'
-export const dynamic = 'force-dynamic';
 
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
+export const dynamic = 'force-dynamic';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
-const ReCAPTCHA = dynamic(() => import('react-google-recaptcha'), { ssr: false });
+const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
 
 
 
@@ -15,8 +14,11 @@ const ReCAPTCHA = dynamic(() => import('react-google-recaptcha'), { ssr: false }
 
 
 export default function Contactenos() {
+    useEffect(() => {
+        import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    }, []);
     const form = useRef();
-    
+
     const [captchaToken, setCaptchaToken] = useState(null);
     const [servicio, setServicio] = useState("Elige un servicio");
     const sendEmail = (e) => {

@@ -1,12 +1,12 @@
 'use client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-import ReCAPTCHA from "react-google-recaptcha";
-import emailjs from 'emailjs-com';
-
+export const dynamic = 'force-dynamic';
+import dynamicImport from 'next/dynamic';
+const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
+import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
+
 
 
 function Counter({ end, label }) {
@@ -15,6 +15,8 @@ function Counter({ end, label }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Protección SSR
+
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.6 }
@@ -35,7 +37,7 @@ function Counter({ end, label }) {
           return prev + 1;
         });
       }, 30);
-      return () => clearInterval(interval); // Evita múltiples intervalos
+      return () => clearInterval(interval);
     }
   }, [isVisible, count, end]);
 
@@ -47,12 +49,16 @@ function Counter({ end, label }) {
   );
 }
 
+
 export default function Home() {
   const form = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [servicio, setServicio] = useState("Elige un servicio");
   const sendEmail = (e) => {
     e.preventDefault();
+    useEffect(() => {
+      import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    }, []);
 
     if (!captchaToken) {
       alert("Por favor completa el reCAPTCHA.");
@@ -88,9 +94,9 @@ export default function Home() {
     setServicio(e.target.innerText);
   };
   return (
-    
+
     <>
-          <BootstrapClient/>
+      <BootstrapClient />
 
 
       <div className="background">
