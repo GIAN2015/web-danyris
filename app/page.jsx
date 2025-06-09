@@ -7,7 +7,8 @@ import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
 
-const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
 
 
 
@@ -53,6 +54,8 @@ function Counter({ end, label }) {
 
 
 export default function Home() {
+  if (!siteKey) return <p>Error: Falta la clave del reCAPTCHA</p>;
+
   const form = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [servicio, setServicio] = useState("Elige un servicio");

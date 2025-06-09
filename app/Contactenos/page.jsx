@@ -8,7 +8,8 @@ import emailjs from '@emailjs/browser';
 
 const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
 
-const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
 
 
@@ -57,6 +58,7 @@ export default function Contactenos() {
     const handleServicioChange = (e) => {
         setServicio(e.target.innerText);
     };
+    if (!siteKey) return <p>Error: Falta la clave del reCAPTCHA</p>;
 
     return (
         <>
@@ -190,10 +192,11 @@ export default function Contactenos() {
                                 {/* CAPTCHA en español */}
                                 <div className="mb-3">
                                     <ReCAPTCHA
-                                          sitekey={siteKey}
+                                        sitekey={siteKey}
                                         onChange={(token) => setCaptchaToken(token)}
                                         onExpired={() => setCaptchaToken(null)}
-                                        hl="es" // para mostrarlo en español
+                                        hl="es"
+                                        ref={recaptchaRef}
                                     />
                                 </div>
 
