@@ -2,20 +2,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 export const dynamic = 'force-dynamic';
 import dynamicImport from 'next/dynamic';
-const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
+
 import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
-
+import ReCAPTCHA from 'react-google-recaptcha';
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
 
 
 
 function Counter({ end, label }) {
+  const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
   const [count, setCount] = useState(0);
   const ref = useRef();
-  const recaptchaRef = useRef(); 
+  // const recaptchaRef = useRef(); 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
