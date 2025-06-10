@@ -7,8 +7,7 @@ import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
 
-const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
-const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
 
 
 
@@ -55,18 +54,18 @@ function Counter({ end, label }) {
   );
 }
 
-
+const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 export default function Home() {
-  if (!siteKey) return <p>Error: Falta la clave del reCAPTCHA</p>;
+
 
   const form = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
   const [servicio, setServicio] = useState("Elige un servicio");
+
   const sendEmail = (e) => {
     e.preventDefault();
-    useEffect(() => {
-      import('bootstrap/dist/js/bootstrap.bundle.min.js');
-    }, []);
+
 
     if (!captchaToken) {
       alert("Por favor completa el reCAPTCHA.");
@@ -95,12 +94,14 @@ export default function Home() {
       );
   };
 
-
-
+  useEffect(() => {
+    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+  }, []);
 
   const handleServicioChange = (e) => {
     setServicio(e.target.innerText);
   };
+  if (!siteKey) return <p>Error: Falta la clave del reCAPTCHA</p>;
   return (
 
     <>
@@ -284,7 +285,6 @@ export default function Home() {
 
         </div>
       </div>
-
 
       <div className="container px-4 text-center contactenos-container2">
         <div className="row gx-5">
