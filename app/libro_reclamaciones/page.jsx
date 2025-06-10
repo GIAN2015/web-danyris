@@ -1,8 +1,6 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from "react";
-
-
 import emailjs from '@emailjs/browser';
 import Script from "next/script";
 
@@ -29,33 +27,33 @@ export default function LibroReclamaciones() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("Enviando formulario...");
 
         const recaptcha = window.grecaptcha.getResponse();
+        console.log("Token reCAPTCHA:", recaptcha);
         if (!recaptcha) {
             setError("Por favor, verifica el reCAPTCHA.");
             return;
         }
 
+        console.log("Campos enviados:", new FormData(form.current));
+
         emailjs
-            .sendForm(
-                "service_h5b2jtg",   
-                "template_jviil2p",    
-                form.current,
-                "XyvI8lbXzQRrGzJWs"      
-            )
+            .sendForm("service_h5b2jtg", "template_jviil2p", form.current, "XyvI8lbXzQRrGzJWs")
             .then(
                 (result) => {
-                    console.log(result.text);
+                    console.log("Éxito:", result.text);
                     setEnviado(true);
                     form.current.reset();
-                    window.grecaptcha.reset(); 
+                    window.grecaptcha.reset();
                 },
                 (error) => {
-                    console.log(error.text);
+                    console.error("Error en envío:", error);
                     setError("Error al enviar. Intenta nuevamente.");
                 }
             );
     };
+
 
     return (
 
