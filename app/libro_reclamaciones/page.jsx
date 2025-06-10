@@ -11,6 +11,7 @@ export default function LibroReclamaciones() {
 
     const form = useRef();
     const [mensaje, setMensaje] = useState('');
+    const [tipo, setTipo] = useState("");
 
     const [enviado, setEnviado] = useState(false);
     const [error, setError] = useState(null);
@@ -127,9 +128,14 @@ export default function LibroReclamaciones() {
                 <p>(2) = Disconformidad no relacionada a los productos o servicios; o, malestar o descontento respecto a la atención al público.</p>
 
                 <div className="form-row">
-                    <label><input type="radio" name="tipo" value="1" required /> Reclamo(1)</label>
-                    <label><input type="radio" name="tipo" value="2" /> Queja(2)</label>
+                    <label>
+                        <input type="radio" name="tipo" value="Reclamo (1)" required /> Reclamo(1)
+                    </label>
+                    <label>
+                        <input type="radio" name="tipo" value="Queja (2)" /> Queja(2)
+                    </label>
                 </div>
+
 
                 {/* CAPTCHA en español */}
                 <div className="mb-3">
