@@ -60,38 +60,50 @@ export default function Home() {
 
 
   const form = useRef(null);
+
+
   const [captchaToken, setCaptchaToken] = useState(null);
   const [servicio, setServicio] = useState("Elige un servicio");
+  const [mensaje, setMensaje] = useState('');
+  const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState('');
+  const recaptchaRef = useRef(null);
 
-  const sendEmail = (e) => {
+
+  const sendEmail = async (e) => {
     e.preventDefault();
-
 
     if (!captchaToken) {
       alert("Por favor completa el reCAPTCHA.");
       return;
     }
 
-    emailjs
-      .sendForm(
+    try {
+      const result = await emailjs.sendForm(
         "service_f8xf7xk",
         "template_jviil2p",
         form.current,
         "XyvI8lbXzQRrGzJWs"
-      )
-      .then(
-        (result) => {
-          alert("Mensaje enviado correctamente.");
-          console.log("Correo enviado", result.text);
-          form.current.reset();
-          setServicio("");
-          setCaptchaToken(null);
-        },
-        (error) => {
-          alert("Error al enviar el mensaje.");
-          console.error("Error al enviar correo", error.text);
-        }
       );
+
+      console.log("Éxito:", result.text);
+      setEnviado(true);
+      setMensaje("✅ Mensaje enviado con éxito.");
+      setError('');
+      setCaptchaToken(null);
+      form.current.reset();
+
+      // Resetea el reCAPTCHA
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+
+    } catch (error) {
+      console.error("Error en envío:", error);
+      setError("Error al enviar. Intenta nuevamente.");
+      setEnviado(false);
+      setMensaje("❌ Error al enviar. Intenta nuevamente.");
+    }
   };
 
   useEffect(() => {
@@ -415,6 +427,13 @@ export default function Home() {
                 </div>
 
                 <button type="submit" className="button-line">Enviar</button>
+                {mensaje && (
+                  <p style={{ marginTop: '10px', color: mensaje.includes('✅') ? 'green' : 'red' }}>
+                    {mensaje}
+                  </p>
+                )}
+
+
               </form>
             </div>
           </div>

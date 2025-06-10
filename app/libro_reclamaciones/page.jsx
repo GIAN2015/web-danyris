@@ -1,17 +1,21 @@
 'use client';
-
+import dynamicImport from 'next/dynamic';
+export const dynamic = 'force-dynamic';
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import Script from "next/script";
 
-
-
+const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 export default function LibroReclamaciones() {
 
     const form = useRef();
+    const [mensaje, setMensaje] = useState('');
+
     const [enviado, setEnviado] = useState(false);
     const [error, setError] = useState(null);
     const [captchaReady, setCaptchaReady] = useState(false);
+    const recaptchaRef = useRef();
     useEffect(() => {
         const checkCaptcha = () => {
             if (window.grecaptcha) {
@@ -33,23 +37,29 @@ export default function LibroReclamaciones() {
         console.log("Token reCAPTCHA:", recaptcha);
         if (!recaptcha) {
             setError("Por favor, verifica el reCAPTCHA.");
+            setMensaje("Por favor, verifica el reCAPTCHA.");
             return;
         }
 
         console.log("Campos enviados:", new FormData(form.current));
 
         emailjs
-            .sendForm("service_h5b2jtg", "template_jviil2p", form.current, "XyvI8lbXzQRrGzJWs")
+            .sendForm("service_h5b2jtg", "template_g2r1dkq", form.current, "XyvI8lbXzQRrGzJWs")
             .then(
                 (result) => {
                     console.log("Éxito:", result.text);
                     setEnviado(true);
+                    setMensaje("✅ Mensaje enviado con éxito.");
                     form.current.reset();
                     window.grecaptcha.reset();
+
                 },
                 (error) => {
                     console.error("Error en envío:", error);
                     setError("Error al enviar. Intenta nuevamente.");
+                    setEnviado(false);
+                    setMensaje("❌ Error al enviar. Intenta nuevamente.");
+
                 }
             );
     };
@@ -121,13 +131,24 @@ export default function LibroReclamaciones() {
                     <label><input type="radio" name="tipo" value="2" /> Queja(2)</label>
                 </div>
 
-                {/* CAPTCHA */}
-                <div className="g-recaptcha" data-sitekey="6LelwFYrAAAAAEksbrcWyslGk9N9GjajQXzgRyxR"></div>
-
-                {error && <p style={{ color: "red" }}>{error}</p>}
-                {enviado && <p style={{ color: "green" }}>Formulario enviado correctamente.</p>}
+                {/* CAPTCHA en español */}
+                <div className="mb-3">
+                    <ReCAPTCHA
+                        sitekey={siteKey}
+                        onChange={(token) => setCaptchaToken(token)}
+                        onExpired={() => setCaptchaToken(null)}
+                        hl="es"
+                        ref={recaptchaRef}
+                    />
+                </div>
 
                 <button type="submit" disabled={!captchaReady}>Enviar</button>
+                {mensaje && (
+                    <p style={{ marginTop: '10px', color: enviado ? 'green' : 'red' }}>
+                        {mensaje}
+                    </p>
+                )}
+
             </form>
         </>
 
