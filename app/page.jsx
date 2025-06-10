@@ -6,14 +6,15 @@ import dynamicImport from 'next/dynamic';
 import emailjs from '@emailjs/browser';
 import { useEffect, useRef, useState } from 'react';
 import BootstrapClient from './BootstrapClient';
-import ReCAPTCHA from 'react-google-recaptcha';
+
+const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
 
 
 
 function Counter({ end, label }) {
-  const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
+
   const [count, setCount] = useState(0);
   const ref = useRef();
   // const recaptchaRef = useRef(); 

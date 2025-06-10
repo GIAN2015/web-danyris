@@ -19,7 +19,7 @@ export default function contactenos() {
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }, []);
     const form = useRef();
-const recaptchaRef = useRef(); 
+    const recaptchaRef = useRef();
     const [captchaToken, setCaptchaToken] = useState(null);
     const [servicio, setServicio] = useState("Elige un servicio");
     const sendEmail = (e) => {
@@ -186,6 +186,12 @@ const recaptchaRef = useRef();
                                                 Help Desk
                                             </button>
                                         </li>
+                                        <li>
+                                            <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                                                Otro
+                                            </button>
+                                        </li>
+
                                     </ul>
                                 </div>
 
