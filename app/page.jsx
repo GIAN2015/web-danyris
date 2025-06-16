@@ -145,8 +145,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container text-center my-5">
-        <h1 className="section-title mb-4">LO QUE OFRECEMOS</h1>
+      <div className="container text-center my-5 px-3">
+        <h1 className="section-title mb-4 text-2xl md:text-3xl font-bold">LO QUE OFRECEMOS</h1>
+
         <div className="row g-4">
           {[
             {
@@ -170,17 +171,17 @@ export default function Home() {
               desc: 'Desarrollamos tu Página web para presentar tus productos...',
             },
           ].map((s, i) => (
-            <div className="col-12 col-md-6" key={i}>
-              <div className="card h-100 shadow-sm border-0">
+            <div key={i} className="col-12 col-md-6">
+              <div className="card h-100 shadow-sm border-0 sm:rounded-xl sm:overflow-hidden sm:shadow-md hover:sm:shadow-lg transition sm:duration-300">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="card-img-top img-fluid rounded-top"
+                  className="card-img-top img-fluid sm:w-full sm:h-48 sm:object-cover"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <div className="card-body9">
-                  <h5 className="card-title">{s.title}</h5>
-                  <p className="card-text">{s.desc}</p>
+                <div className="card-body9 p-4 text-start">
+                  <h5 className="card-title text-base sm:text-lg font-semibold">{s.title}</h5>
+                  <p className="card-text text-sm text-gray-600">{s.desc}</p>
                 </div>
               </div>
             </div>
@@ -189,256 +190,249 @@ export default function Home() {
       </div>
 
 
+
+
+   
       <h1 className="tittle-marcas">Trabajamos con las mejores marcas</h1>
-      <div className="container text-center">
-        <div className="row row-cols-3">
-
-          {/* Carousel 0 */}
-          <div className="col">
-            <div id="carousel0" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+<div className="container text-center">
+  <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {[0, 1, 2, 3, 4, 5].map((index) => (
+      <div className="col" key={index}>
+        <div id={`carousel${index}`} className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <div className="carousel-inner">
+            {/* Aquí debes poner las imágenes de cada carrusel manualmente según el ID */}
+            {index === 0 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
+                  <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+                  <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel 1 */}
-          <div className="col">
-            <div id="carousel1" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+              </>
+            )}
+            {index === 1 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/logo-dell.png" className="d-block w-100" alt="Dell" />
+                  <img src="./img/logos/logo-dell.png" className="d-block w-100 img-fluid" alt="Dell" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/Logo-Epson.png" className="d-block w-100" alt="Epson" />
+                  <img src="./img/logos/Logo-Epson.png" className="d-block w-100 img-fluid" alt="Epson" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel 2 */}
-          <div className="col">
-            <div id="carousel2" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+              </>
+            )}
+            {index === 2 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" className="d-block w-100" alt="Adobe" />
+                  <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-hp.png" className="d-block w-100" alt="HP" />
+                  <img src="./img/logos/logo-hp.png" className="d-block w-100 img-fluid" alt="HP" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-kaspersky.png" className="d-block w-100" alt="Kaspersky" />
+                  <img src="./img/logos/logo-kaspersky.png" className="d-block w-100 img-fluid" alt="Kaspersky" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel 3 */}
-          <div className="col">
-            <div id="carousel3" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+              </>
+            )}
+            {index === 3 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/Logo-Lenovo.png" className="d-block w-100" alt="Lenovo" />
+                  <img src="./img/logos/Logo-Lenovo.png" className="d-block w-100 img-fluid" alt="Lenovo" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-microsoft.png" className="d-block w-100" alt="Microsoft" />
+                  <img src="./img/logos/logo-microsoft.png" className="d-block w-100 img-fluid" alt="Microsoft" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel 4 */}
-          <div className="col">
-            <div id="carousel4" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+              </>
+            )}
+            {index === 4 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/logo-tp-link.png" className="d-block w-100" alt="TP-Link" />
+                  <img src="./img/logos/logo-tp-link.png" className="d-block w-100 img-fluid" alt="TP-Link" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-trendnet.png" className="d-block w-100" alt="Trendnet" />
+                  <img src="./img/logos/logo-trendnet.png" className="d-block w-100 img-fluid" alt="Trendnet" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel 5 */}
-          <div className="col">
-            <div id="carousel5" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-              <div className="carousel-inner">
+              </>
+            )}
+            {index === 5 && (
+              <>
                 <div className="carousel-item active">
-                  <img src="./img/logos/logo-ubiquiti.png" className="d-block w-100" alt="Ubiquiti" />
+                  <img src="./img/logos/logo-ubiquiti.png" className="d-block w-100 img-fluid" alt="Ubiquiti" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" className="d-block w-100" alt="Brother" />
+                  <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
                 </div>
                 <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100" alt="Cisco" />
+                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div className="container px-4 text-center contactenos-container2">
-        <div className="row gx-5">
-          <div className="col contactenos-container">
-            <div className="p-3">
-              <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
-              <form ref={form} onSubmit={sendEmail} className="form-contactenos">
-                <div className="input-group mb-3">
-                  <span className="input-group-text">
-                    <i className="bi bi-person-fill"></i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="nombre"
-                    placeholder="Nombre de Contacto"
-                    required
-                  />
-                </div>
-
-                <div className="input-group mb-3">
-                  <span className="input-group-text">
-                    <i className="bi bi-building"></i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="empresa"
-                    placeholder="Empresa"
-                    required
-                  />
-                </div>
-
-                <div className="input-group mb-3">
-                  <span className="input-group-text">
-                    <i className="bi bi-envelope-fill"></i>
-                  </span>
-                  <input
-                    type="email"
-                    className="form-control"
-                    name="correo"
-                    placeholder="Correo"
-                    required
-                  />
-                </div>
-
-                <div className="input-group mb-3">
-                  <span className="input-group-text">
-                    <i className="bi bi-phone-fill"></i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="celular"
-                    placeholder="Celular"
-                    required
-                  />
-                </div>
-
-                <div className="input-group mb-3">
-                  <span className="input-group-text">
-                    <i className="bi bi-chat-left-dots-fill"></i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="mensaje"
-                    placeholder="Mensaje"
-                    required
-                  />
-                </div>
-
-                <div className="input-group mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Elige un servicio"
-                    name="servicio"
-                    value={servicio}
-                    readOnly
-                  />
-                  <button
-                    className="btn btn-outline-secondary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Servicios
-                  </button>
-                  <ul className="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                        Cloud Computing
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                        Networking y Cableado Estructurado
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                        Equipamiento
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                        Licenciamiento y Servicios
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                        Otro
-                      </button>
-                    </li>
-
-                  </ul>
-                </div>
-
-                {/* CAPTCHA en español */}
-                <div className="mb-3">
-                  <ReCAPTCHA
-                    sitekey={siteKey}
-                    onChange={(token) => setCaptchaToken(token)}
-                    onExpired={() => setCaptchaToken(null)}
-                    hl="es" // para mostrarlo en español
-                  />
-                </div>
-
-                <button type="submit" className="button-line">Enviar</button>
-                {mensaje && (
-                  <p style={{ marginTop: '10px', color: mensaje.includes('✅') ? 'green' : 'red' }}>
-                    {mensaje}
-                  </p>
-                )}
-
-
-              </form>
-            </div>
+              </>
+            )}
           </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
+
+      
+
+ 
+     
+
+    <div className="container px-4 text-center contactenos-container2">
+      <div className="row gx-5">
+        <div className="col contactenos-container">
+          <div className="p-3">
+            <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
+            <form ref={form} onSubmit={sendEmail} className="form-contactenos">
+              <div className="input-group mb-3">
+                <span className="input-group-text">
+                  <i className="bi bi-person-fill"></i>
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="nombre"
+                  placeholder="Nombre de Contacto"
+                  required
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <span className="input-group-text">
+                  <i className="bi bi-building"></i>
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="empresa"
+                  placeholder="Empresa"
+                  required
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <span className="input-group-text">
+                  <i className="bi bi-envelope-fill"></i>
+                </span>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="correo"
+                  placeholder="Correo"
+                  required
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <span className="input-group-text">
+                  <i className="bi bi-phone-fill"></i>
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="celular"
+                  placeholder="Celular"
+                  required
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <span className="input-group-text">
+                  <i className="bi bi-chat-left-dots-fill"></i>
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="mensaje"
+                  placeholder="Mensaje"
+                  required
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Elige un servicio"
+                  name="servicio"
+                  value={servicio}
+                  readOnly
+                />
+                <button
+                  className="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Servicios
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                      Cloud Computing
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                      Networking y Cableado Estructurado
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                      Equipamiento
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                      Licenciamiento y Servicios
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                      Otro
+                    </button>
+                  </li>
+
+                </ul>
+              </div>
+
+              {/* CAPTCHA en español */}
+              <div className="mb-3">
+                <ReCAPTCHA
+                  sitekey={siteKey}
+                  onChange={(token) => setCaptchaToken(token)}
+                  onExpired={() => setCaptchaToken(null)}
+                  hl="es" // para mostrarlo en español
+                />
+              </div>
+
+              <button type="submit" className="button-line">Enviar</button>
+              {mensaje && (
+                <p style={{ marginTop: '10px', color: mensaje.includes('✅') ? 'green' : 'red' }}>
+                  {mensaje}
+                </p>
+              )}
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     </>
   );
 }

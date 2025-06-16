@@ -28,12 +28,13 @@ export default function RootLayout({ children }) {
 
       </head>
       <body className={oxanium.className}>
-        <header className='header'>
+        <div>
+        <header >
           <Header />
         </header>
 
-        <div className='page-container'>
-          <div className='content-wrap'>
+        
+          <div className='layout-container'>
 
             {children}
           </div>

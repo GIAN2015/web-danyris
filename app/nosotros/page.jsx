@@ -1,13 +1,16 @@
 export default function About() {
     return (
         <>
-            <section className="about-background py-5 text-white text-center">
-                <div className="overlay"></div> {/* <- Capa oscura */}
-                <div className="first-section">
-                    <h1 className="primary-services">Sobre Nosotros</h1>
-                     <div className="container"></div>
+            <section className="about-background py-5 text-white text-center position-relative">
+                <div className="overlay position-absolute top-0 start-0 w-100 h-100"></div> {/* Capa oscura */}
+                <div className="first-section position-relative z-1">
+                    <h1 className="primary-services mb-4">Sobre Nosotros</h1>
+                    <div className="container">
+                        {/* Puedes agregar contenido adicional aquí */}
+                    </div>
                 </div>
             </section>
+
 
             <section className="about-info py-5">
                 <div className="container">
@@ -34,14 +37,14 @@ export default function About() {
                             <p>
                                 Obtener clientes satisfechos gracias a nuestro compromiso y dedicación. Garantizar la calidad y excelencia de nuestros servicios y productos.
                             </p>
-                           <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
+                            <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
                         </div>
                         <div className="col-md-6 mb-4">
                             <h3 className="mb-3">Nuestra Visión</h3>
                             <p>
                                 Consolidarnos como la mejor alternativa de soluciones tecnológicas en el mercado nacional, con los más altos certificados en informática.
                             </p>
-                               <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
+                            <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
                         </div>
                     </div>
                 </div>

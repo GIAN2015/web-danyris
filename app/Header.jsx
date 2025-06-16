@@ -37,9 +37,12 @@ export default function Header() {
   return (
     <nav className={`navbar header navbar-expand-lg ${scrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <img className='margin' src="/img/Logo_DANYRIS-Color-Horizontal-1024x212-1.png" alt="Logo Danyris" height="60" />
-        </a>
+        <div className="absolute left-0 lg:static">
+          <a className="navbar-brand mx-auto lg:mx-0 flex justify-center" href="/">
+            <img src="/img/Logo_DANYRIS-Color-Horizontal-1024x212-1.png" alt="Logo Danyris" height="60" />
+          </a>
+        </div>
+
 
         <button
           className="navbar-toggler"
@@ -52,8 +55,8 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className={`collapse navbar-collapse${isOpen ? ' show' : ''}`} id="navbarSupportedContent">
-          <ul className="navbar-nav mb-2 mb-lg-0">
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''} w-full bg-[#0d114f] mt-2 lg:mt-0`} id="navbarSupportedContent">
+          <ul className="navbar-nav w-full flex flex-col gap-2 text-white text-start px-4 py-2 lg:flex-row lg:items-center lg:justify-end lg:gap-4">
             <li className="nav-item">
               <a className={`nav-link font-custom ${pathname === '/' ? 'active-link' : ''}`} href="/">Inicio</a>
             </li>
@@ -62,12 +65,8 @@ export default function Header() {
             </li>
             <li ref={dropdownRef} className={`nav-item dropdown${dropdownOpen ? ' show' : ''}`}>
               <a
-
-                className="nav-link dropdown-toggle font-custom custom "
+                className="nav-link dropdown-toggle font-custom custom"
                 href="/servicios"
-
-            
-
                 role="button"
                 aria-expanded={dropdownOpen ? 'true' : 'false'}
                 onClick={(e) => {
@@ -85,7 +84,7 @@ export default function Header() {
               </ul>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/Contactenos' ? 'active-link' : ''}`} href="/contactenos">Contáctenos</a>
+              <a className={`nav-link font-custom ${pathname === '/contactenos' ? 'active-link' : ''}`} href="/contactenos">Contáctenos</a>
             </li>
             <li className="nav-item">
               <a className={`nav-link font-custom ${pathname === '/news' ? 'active-link' : ''}`} href="/novedades">Novedades</a>
