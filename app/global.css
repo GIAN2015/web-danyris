@@ -14,6 +14,9 @@
 
 .active-link {
   color: darkgrey;
+  font-weight: bold;
+
+  border-bottom: 2px solid darkgrey;
 
 }
 

@@ -1,10 +1,12 @@
-// WhatsAppButton.jsx
 'use client';
 
 export default function WhatsAppButton() {
+  const mensaje = encodeURIComponent("Hola, estoy interesado en sus servicios. ¿Podría brindarme más información? vengo de la página web de Danyris. Gracias. https://danyris.com/");
+  const numero = "51924057419";
+
   return (
     <a
-      href="https://wa.me/51924057419"
+      href={`https://wa.me/${numero}?text=${mensaje}`}
       className="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"

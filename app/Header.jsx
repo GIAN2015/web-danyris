@@ -10,6 +10,8 @@ export default function Header() {
   const pathname = usePathname();
   const dropdownRef = useRef(null);
 
+
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -65,7 +67,7 @@ export default function Header() {
             </li>
             <li ref={dropdownRef} className={`nav-item dropdown${dropdownOpen ? ' show' : ''}`}>
               <a
-                className="nav-link dropdown-toggle font-custom custom"
+                className={`nav-link dropdown-toggle font-custom custom ${pathname.startsWith('/servicios') ? 'active-link' : ''}`}
                 href="/servicios"
                 role="button"
                 aria-expanded={dropdownOpen ? 'true' : 'false'}

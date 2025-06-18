@@ -114,6 +114,7 @@ export default function ServiciosContent() {
                   <li className="list-item-servicio">CSP, ESD y OEM</li>
                   <li className="list-item-servicio">Creative Cloud</li>
                   <li className="list-item-servicio">Garantías Extendidas</li>
+                  <li className="list-item-servicio">Antivirus corporativos Kaspersky Cloud</li>
                 </ul>
               </div>
             </div>
@@ -132,7 +133,6 @@ export default function ServiciosContent() {
             <div className="collapse" id="collapse6" data-bs-parent="#accordionServicios">
               <div className="card card-body5 card-body">
                 <ul>
-                  <li className="list-item-servicio">Sitios web responsivos, tiendas virtuales, apps móviles para iOS/Android.</li>
                   <li className="list-item-servicio">Optimización SEO</li>
                   <li className="list-item-servicio">Sitios responsivos</li>
                   <li className="list-item-servicio">Desarrollo de Tiendas virtuales</li>
@@ -152,8 +152,7 @@ export default function ServiciosContent() {
             <div className="collapse" id="collapse5" data-bs-parent="#accordionServicios">
               <div className="card card-body4 card-body">
                 <ul>
-                  <li className="list-item-servicio">Soporte remoto o presencial para resolver problemas técnicos del día a día</li>
-                   <li className="list-item-servicio">Mantenimiento correctivo y preventivo de equipos de cómputo </li>
+                  <li className="list-item-servicio">Mantenimiento correctivo y preventivo de equipos de cómputo </li>
                   <li className="list-item-servicio">Mesa de ayuda de forma presencial y/o remota </li>
                   <li className="list-item-servicio">Planes integrales de Outsourcing de soporte de TI </li>
                   <li className="list-item-servicio">Inventario de equipos de cómputo </li>
@@ -195,7 +194,9 @@ export default function ServiciosContent() {
             <div className="collapse" id="collapse7" data-bs-parent="#accordionServicios">
               <div className="card card-body6">
                 <ul>
-                  <li className="list-item-servicio">Optimización de procesos empresariales con SAP Business One y soluciones a medida.</li>
+                  <li className="list-item-servicio">Sistemas de información a medida (Escritorio, web)</li>
+                  <li className="list-item-servicio">Elaboración de reportes para SAP B1 (Hana o SQL Sever)</li>
+                  <li className="list-item-servicio">Consultoría para SAP B1 (Hana o SQL Server)</li>
                 </ul>
               </div>
             </div>
