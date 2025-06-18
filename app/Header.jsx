@@ -74,13 +74,13 @@ export default function Header() {
                   setDropdownOpen(!dropdownOpen);
                 }}
               >
-                Servicios
+                Soluciones
               </a>
               <ul className={`dropdown-menu${dropdownOpen ? ' show' : ''}`}>
-                <li><a className={`dropdown-item ${pathname === '/networking' ? 'active-link' : ''}`} href="/servicios">Networking</a></li>
-                <li><a className={`dropdown-item ${pathname === '/web' ? 'active-link' : ''}`} href="/servicios">Desarrollo Web</a></li>
-                <li><a className={`dropdown-item ${pathname === '/licencias' ? 'active-link' : ''}`} href="/servicios">Licenciamiento</a></li>
-                <li><a className={`dropdown-item ${pathname === '/cloud' ? 'active-link' : ''}`} href="/servicios">Cloud</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=networking">Networking</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=web">Desarrollo Web</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=licencias">Licenciamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=cloud">Cloud</a></li>
               </ul>
             </li>
             <li className="nav-item">

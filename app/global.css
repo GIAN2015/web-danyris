@@ -101,7 +101,11 @@
   font-weight: 400;
   font-size: larger;
   margin-top: 20px;
+  
+}
 
+@media (min-width: 768px) {
+ 
 }
 
 .text-decoration:hover {
@@ -231,7 +235,8 @@ a {
   margin-left: 150px;
   margin-right: 170px;
   border-right: 5px solid whitesmoke;
-
+  margin-top: 55px;
+  
 
 }
 
@@ -537,6 +542,7 @@ a {
 
 .primary-services {
   text-align: left;
+  
 }
 
 @media (max-width: 768px) {

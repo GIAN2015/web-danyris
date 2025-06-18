@@ -1,23 +1,47 @@
 'use client';
 
-
-
 import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
 export default function Servicios() {
-     useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const bootstrap = require('bootstrap/dist/js/bootstrap.bundle.min.js');
+
+    const section = searchParams.get('section');
+    if (section) {
+      const sectionMap = {
+        cloud: 'collapse1',
+        networking: 'collapse2',
+        equipamiento: 'collapse3',
+        licencias: 'collapse4',
+        helpdesk: 'collapse5',
+        web: 'collapse6',
+        consultoria: 'collapse7',
+      };
+
+      const collapseId = sectionMap[section];
+      if (collapseId) {
+        const collapseElement = document.getElementById(collapseId);
+        if (collapseElement) {
+          const collapse = new bootstrap.Collapse(collapseElement, {
+            toggle: true,
+          });
+          collapse.show();
+        }
+      }
+    }
+  }, [searchParams]);
     return (
         <>
             <div className="background-services py-5 text-white text-center">
                 <div className="overlay"></div> {/* <- Capa oscura */}
                 <div className="first-section">
                     <h1 className="primary-services">Servicios</h1>
-                     <div className="container"></div>
+                    <div className="container"></div>
                 </div>
             </div>
 
@@ -65,6 +89,25 @@ export default function Servicios() {
                         </div>
                     </div>
                 </div>
+                {/* Servicio 4 */}
+                <div className="card">
+                    <div className="card-body3 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false">
+                        <h5 className="card-title">Licenciamiento y Servicios</h5>
+                        <p className="card-text">Distribuimos software original y brindamos soporte técnico.</p>
+                        <i className="bi bi-caret-down-fill"></i>
+                        <div className="collapse" id="collapse4" data-bs-parent="#accordionServicios">
+                            <div className="card card-body3 card-body">
+                                <ul>
+                                    <li className="list-item-servicio">Microsoft 365 Business</li>
+                                    <li className="list-item-servicio">Windows y Windows Server</li>
+                                    <li className="list-item-servicio">CSP, ESD y OEM</li>
+                                    <li className="list-item-servicio">Creative Cloud</li>
+                                    <li className="list-item-servicio">Garantías Extendidas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Servicio 3 */}
                 <div className="card">
@@ -87,25 +130,7 @@ export default function Servicios() {
                     </div>
                 </div>
 
-                {/* Servicio 4 */}
-                <div className="card">
-                    <div className="card-body3 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false">
-                        <h5 className="card-title">Licenciamiento y Servicios</h5>
-                        <p className="card-text">Distribuimos software original y brindamos soporte técnico.</p>
-                        <i className="bi bi-caret-down-fill"></i>
-                        <div className="collapse" id="collapse4" data-bs-parent="#accordionServicios">
-                            <div className="card card-body3 card-body">
-                                <ul>
-                                    <li className="list-item-servicio">Microsoft 365 Business</li>
-                                    <li className="list-item-servicio">Windows y Windows Server</li>
-                                    <li className="list-item-servicio">CSP, ESD y OEM</li>
-                                    <li className="list-item-servicio">Creative Cloud</li>
-                                    <li className="list-item-servicio">Garantías Extendidas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
                 {/* Servicio 5 */}
                 <div className="card">

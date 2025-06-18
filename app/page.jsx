@@ -105,10 +105,19 @@ export default function Home() {
       setMensaje("❌ Error al enviar. Intenta nuevamente.");
     }
   };
-
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
+      // Todos los carousels en la página serán activados automáticamente
+      const carousels = document.querySelectorAll('.carousel');
+      carousels.forEach((carousel) => {
+        new window.bootstrap.Carousel(carousel, {
+          interval: 2000,
+          ride: 'carousel',
+        });
+      });
+    });
   }, []);
+
 
   const handleServicioChange = (e) => {
     setServicio(e.target.innerText);
@@ -192,247 +201,247 @@ export default function Home() {
 
 
 
-   
+
       <h1 className="tittle-marcas">Trabajamos con las mejores marcas</h1>
-<div className="container text-center">
-  <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-    {[0, 1, 2, 3, 4, 5].map((index) => (
-      <div className="col" key={index}>
-        <div id={`carousel${index}`} className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-          <div className="carousel-inner">
-            {/* Aquí debes poner las imágenes de cada carrusel manualmente según el ID */}
-            {index === 0 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
+      <div className="container text-center">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+          {[0, 1, 2, 3, 4, 5].map((index) => (
+            <div className="col" key={index}>
+              <div id={`carousel${index}`} className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div className="carousel-inner">
+                  {/* Aquí debes poner las imágenes de cada carrusel manualmente según el ID */}
+                  {index === 0 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/Logo-Epson.png" className="d-block w-100 img-fluid" alt="Cisco" />
+                      </div>
+                    </>
+                  )}
+                  {index === 1 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/logo-dell.png" className="d-block w-100 img-fluid" alt="Dell" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Epson" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-hp.png" className="d-block w-100 img-fluid" alt="Cisco" />
+                      </div>
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-hp.png" className="d-block w-100 img-fluid" alt="HP" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-kaspersky.png" className="d-block w-100 img-fluid" alt="Kaspersky" />
+                      </div>
+                    </>
+                  )}
+                  {index === 3 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/Logo-Lenovo.png" className="d-block w-100 img-fluid" alt="Lenovo" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-microsoft.png" className="d-block w-100 img-fluid" alt="Microsoft" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-tp-link.png" className="d-block w-100 img-fluid" alt="Cisco" />
+                      </div>
+                    </>
+                  )}
+                  {index === 4 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/logo-tp-link.png" className="d-block w-100 img-fluid" alt="TP-Link" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-trendnet.png" className="d-block w-100 img-fluid" alt="Trendnet" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
+                      </div>
+                    </>
+                  )}
+                  {index === 5 && (
+                    <>
+                      <div className="carousel-item active">
+                        <img src="./img/logos/logo-ubiquiti.png" className="d-block w-100 img-fluid" alt="Ubiquiti" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
+                      </div>
+                      <div className="carousel-item">
+                        <img src="./img/logos/logo-kaspersky.png" className="d-block w-100 img-fluid" alt="Cisco" />
+                      </div>
+                    </>
+                  )}
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div className="container px-4 text-center contactenos-container2">
+        <div className="row gx-5">
+          <div className="col contactenos-container">
+            <div className="p-3">
+              <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
+              <form ref={form} onSubmit={sendEmail} className="form-contactenos">
+                <div className="input-group mb-3">
+                  <span className="input-group-text">
+                    <i className="bi bi-person-fill"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="nombre"
+                    placeholder="Nombre de Contacto"
+                    required
+                  />
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text">
+                    <i className="bi bi-building"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="empresa"
+                    placeholder="Empresa"
+                    required
+                  />
                 </div>
-              </>
-            )}
-            {index === 1 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/logo-dell.png" className="d-block w-100 img-fluid" alt="Dell" />
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text">
+                    <i className="bi bi-envelope-fill"></i>
+                  </span>
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="correo"
+                    placeholder="Correo"
+                    required
+                  />
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/Logo-Epson.png" className="d-block w-100 img-fluid" alt="Epson" />
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text">
+                    <i className="bi bi-phone-fill"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="celular"
+                    placeholder="Celular"
+                    required
+                  />
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text">
+                    <i className="bi bi-chat-left-dots-fill"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="mensaje"
+                    placeholder="Mensaje"
+                    required
+                  />
                 </div>
-              </>
-            )}
-            {index === 2 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/logo-adobe.png" className="d-block w-100 img-fluid" alt="Adobe" />
+
+                <div className="input-group mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Elige un servicio"
+                    name="servicio"
+                    value={servicio}
+                    readOnly
+                  />
+                  <button
+                    className="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Servicios
+                  </button>
+                  <ul className="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Cloud Computing
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Networking y Cableado Estructurado
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Equipamiento
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Licenciamiento y Servicios
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Otro
+                      </button>
+                    </li>
+
+                  </ul>
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-hp.png" className="d-block w-100 img-fluid" alt="HP" />
+
+                {/* CAPTCHA en español */}
+                <div className="mb-3">
+                  <ReCAPTCHA
+                    sitekey={siteKey}
+                    onChange={(token) => setCaptchaToken(token)}
+                    onExpired={() => setCaptchaToken(null)}
+                    hl="es" // para mostrarlo en español
+                  />
                 </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-kaspersky.png" className="d-block w-100 img-fluid" alt="Kaspersky" />
-                </div>
-              </>
-            )}
-            {index === 3 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/Logo-Lenovo.png" className="d-block w-100 img-fluid" alt="Lenovo" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-microsoft.png" className="d-block w-100 img-fluid" alt="Microsoft" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
-                </div>
-              </>
-            )}
-            {index === 4 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/logo-tp-link.png" className="d-block w-100 img-fluid" alt="TP-Link" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-trendnet.png" className="d-block w-100 img-fluid" alt="Trendnet" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
-                </div>
-              </>
-            )}
-            {index === 5 && (
-              <>
-                <div className="carousel-item active">
-                  <img src="./img/logos/logo-ubiquiti.png" className="d-block w-100 img-fluid" alt="Ubiquiti" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-Brother.png" className="d-block w-100 img-fluid" alt="Brother" />
-                </div>
-                <div className="carousel-item">
-                  <img src="./img/logos/logo-cisco.png" className="d-block w-100 img-fluid" alt="Cisco" />
-                </div>
-              </>
-            )}
+
+                <button type="submit" className="button-line">Enviar</button>
+                {mensaje && (
+                  <p style={{ marginTop: '10px', color: mensaje.includes('✅') ? 'green' : 'red' }}>
+                    {mensaje}
+                  </p>
+                )}
+
+
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
-
-      
-
- 
-     
-
-    <div className="container px-4 text-center contactenos-container2">
-      <div className="row gx-5">
-        <div className="col contactenos-container">
-          <div className="p-3">
-            <h1 className="tittle-contactenos">Destaca tu proyecto con nosotros</h1>
-            <form ref={form} onSubmit={sendEmail} className="form-contactenos">
-              <div className="input-group mb-3">
-                <span className="input-group-text">
-                  <i className="bi bi-person-fill"></i>
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="nombre"
-                  placeholder="Nombre de Contacto"
-                  required
-                />
-              </div>
-
-              <div className="input-group mb-3">
-                <span className="input-group-text">
-                  <i className="bi bi-building"></i>
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="empresa"
-                  placeholder="Empresa"
-                  required
-                />
-              </div>
-
-              <div className="input-group mb-3">
-                <span className="input-group-text">
-                  <i className="bi bi-envelope-fill"></i>
-                </span>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="correo"
-                  placeholder="Correo"
-                  required
-                />
-              </div>
-
-              <div className="input-group mb-3">
-                <span className="input-group-text">
-                  <i className="bi bi-phone-fill"></i>
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="celular"
-                  placeholder="Celular"
-                  required
-                />
-              </div>
-
-              <div className="input-group mb-3">
-                <span className="input-group-text">
-                  <i className="bi bi-chat-left-dots-fill"></i>
-                </span>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="mensaje"
-                  placeholder="Mensaje"
-                  required
-                />
-              </div>
-
-              <div className="input-group mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Elige un servicio"
-                  name="servicio"
-                  value={servicio}
-                  readOnly
-                />
-                <button
-                  className="btn btn-outline-secondary dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Servicios
-                </button>
-                <ul className="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                      Cloud Computing
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                      Networking y Cableado Estructurado
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                      Equipamiento
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                      Licenciamiento y Servicios
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" className="dropdown-item" onClick={handleServicioChange}>
-                      Otro
-                    </button>
-                  </li>
-
-                </ul>
-              </div>
-
-              {/* CAPTCHA en español */}
-              <div className="mb-3">
-                <ReCAPTCHA
-                  sitekey={siteKey}
-                  onChange={(token) => setCaptchaToken(token)}
-                  onExpired={() => setCaptchaToken(null)}
-                  hl="es" // para mostrarlo en español
-                />
-              </div>
-
-              <button type="submit" className="button-line">Enviar</button>
-              {mensaje && (
-                <p style={{ marginTop: '10px', color: mensaje.includes('✅') ? 'green' : 'red' }}>
-                  {mensaje}
-                </p>
-              )}
-
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     </>
   );
 }
