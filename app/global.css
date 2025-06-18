@@ -96,17 +96,18 @@
 }
 
 
-.text-des {
+.hola {
   font-family: "Oxanium", Sans-serif;
-  font-weight: 400;
-  font-size: larger;
+  font-weight: 700;
+  font-size: large;
   margin-top: 20px;
+  color: #DEA123;
+font-size: 35px;
+  text-align: center;
   
 }
 
-@media (min-width: 768px) {
- 
-}
+
 
 .text-decoration:hover {
   color: whitesmoke;
@@ -951,10 +952,30 @@ a {
 
 }
 
+.absolute{
+  margin-left: 100px;
+}
+@media (max-width: 768px) {
+  .absolute {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+}
+
 .header {
   position: fixed;
   z-index: 5;
   width: 100%;
+ margin-left: auto;
+   font-size: 20px;
+}
+
+@media (max-width: 991px) {
+  .header {
+    margin: auto;
+  
+  }
 }
 
 

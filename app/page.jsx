@@ -13,6 +13,7 @@ import BootstrapClient from './BootstrapClient';
 
 
 function Counter({ end, label }) {
+ 
 
   const [count, setCount] = useState(0);
   const ref = useRef();
@@ -56,6 +57,8 @@ function Counter({ end, label }) {
 
 const ReCAPTCHA = dynamicImport(() => import('react-google-recaptcha'), { ssr: false });
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
+
 export default function Home() {
 
 
@@ -105,18 +108,7 @@ export default function Home() {
       setMensaje("❌ Error al enviar. Intenta nuevamente.");
     }
   };
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
-      // Todos los carousels en la página serán activados automáticamente
-      const carousels = document.querySelectorAll('.carousel');
-      carousels.forEach((carousel) => {
-        new window.bootstrap.Carousel(carousel, {
-          interval: 2000,
-          ride: 'carousel',
-        });
-      });
-    });
-  }, []);
+
 
 
   const handleServicioChange = (e) => {
