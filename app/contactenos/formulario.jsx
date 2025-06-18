@@ -14,7 +14,7 @@ const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
 
 
-export default function Contactenos() {
+export default function Formulario() {
     useEffect(() => {
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }, []);
@@ -73,15 +73,8 @@ const [error, setError] = useState('');
 
     return (
         <>
-            <div className="contactenos-background py-5 text-white text-center">
-                <div className="overlay"></div> {/* <- Capa oscura */}
-                <div className="first-section">
-                    <h1 className="primary-services">Contáctenos</h1>
-                    <div className="container"></div>
-                </div>
-            </div>
-
-            <div class="container px-4 text-center contactenos-container1">
+            
+            <div class="container px-4 text-center contactenos-container2">
                 <div class="row gx-5">
                     <div class="col contactenos-container ">
                         <div class="p-3"><h1 className='tittle-contactenos'>Destaca tu proyecto con nosotros</h1></div>
@@ -229,50 +222,7 @@ const [error, setError] = useState('');
 
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="contact-info">
-                            <h5>UBÍQUENOS</h5>
-
-                            <div class="info-item">
-                                <i class="bi bi-telephone-fill"></i>
-                                <div>
-                                    <span class="label">Teléfonos</span><br />
-                                    <strong>(+51)1 480-0525 / +51 924 057 419</strong>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <i class="bi bi-whatsapp"></i>
-                                <div>
-                                    <span class="label">WhatsApp</span><br />
-                                    <strong>924 057 419</strong>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <i class="bi bi-envelope-fill"></i>
-                                <div>
-                                    <span class="label">Email</span><br />
-                                    <strong>informes@danyris.com</strong>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <div>
-                                    <strong>Calle Victor Jara, Mz. R, Lt. 6, UPIS San José, Urb, Lurín 15822</strong>
-                                </div>
-                            </div>
-
-                            <h5>SÍGUENOS</h5>
-                            <div class="social-icons">
-                                <a href="https://www.linkedin.com/company/soluciones-tecnologicas-danyris/"><i class="bi bi-linkedin"></i></a>
-                                <a href="https://www.facebook.com/stdanyris"><i class="bi bi-facebook"></i></a>
-                                <a href="https://www.instagram.com/stdanyris/"><i class="bi bi-instagram"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                 </div>
             </div>
         </>

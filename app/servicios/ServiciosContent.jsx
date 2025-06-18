@@ -4,10 +4,21 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import Contactenos from '@/app/contactenos/page';
 export default function ServiciosContent() {
   const searchParams = useSearchParams();
-
+  useEffect(() => {
+    const section = searchParams.get('section');
+    if (section) {
+      const target = document.getElementById(section);
+      if (target) {
+        // Espera un poco si los elementos aún se están cargando
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [searchParams]);
   useEffect(() => {
     const bootstrap = require('bootstrap/dist/js/bootstrap.bundle.min.js');
 
@@ -41,7 +52,7 @@ export default function ServiciosContent() {
       <div className="background-services py-5 text-white text-center">
         <div className="overlay"></div>
         <div className="first-section">
-          <h1 className="primary-services">Servicios</h1>
+          <h1 className="primary-services">Soluciones</h1>
           <div className="container"></div>
         </div>
       </div>
@@ -53,7 +64,7 @@ export default function ServiciosContent() {
       <div className="container-servicios" id="accordionServicios">
         {/* Servicio 1 */}
         <div className="card">
-          <div className="card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false">
+          <div className="card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" id="cloud" >
             <h5 className="card-title">Cloud Computing</h5>
             <p className="card-text">Ofrecemos soluciones en la nube escalables y seguras para empresas.</p>
             <i className="bi bi-caret-down-fill"></i>
@@ -74,7 +85,7 @@ export default function ServiciosContent() {
 
         {/* Servicio 2 */}
         <div className="card">
-          <div className="card-body1 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false">
+          <div className="card-body1 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" id="networking" >
             <h5 className="card-title">Networking y Cableado Estructurado</h5>
             <p className="card-text">Diseñamos e instalamos redes eficientes y organizadas.</p>
             <i className="bi bi-caret-down-fill"></i>
@@ -91,7 +102,7 @@ export default function ServiciosContent() {
 
         {/* Servicio 3 */}
         <div className="card">
-          <div className="card-body3 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false">
+          <div className="card-body3 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" id="licencias" >
             <h5 className="card-title">Licenciamiento y Servicios</h5>
             <p className="card-text">Distribuimos software original y brindamos soporte técnico.</p>
             <i className="bi bi-caret-down-fill"></i>
@@ -111,8 +122,8 @@ export default function ServiciosContent() {
 
 
         {/* Servicio 4 */}
-        <div className="card">
-          <div className="card-body5 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false">
+        <div className="card" id="web">
+          <div className="card-body5 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false"  >
             <h5 className="card-title">Diseño y desarrollo de sitios web y apps</h5>
             <p className="card-text">Creamos plataformas digitales personalizadas y funcionales.</p>
             <div className="flecha">
@@ -122,6 +133,10 @@ export default function ServiciosContent() {
               <div className="card card-body5 card-body">
                 <ul>
                   <li className="list-item-servicio">Sitios web responsivos, tiendas virtuales, apps móviles para iOS/Android.</li>
+                  <li className="list-item-servicio">Optimización SEO</li>
+                  <li className="list-item-servicio">Sitios responsivos</li>
+                  <li className="list-item-servicio">Desarrollo de Tiendas virtuales</li>
+                  <li className="list-item-servicio">Hosting y Dominio </li>
                 </ul>
               </div>
             </div>
@@ -130,14 +145,18 @@ export default function ServiciosContent() {
 
         {/* Servicio 5 */}
         <div className="card">
-          <div className="card-body4 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false">
+          <div className="card-body4 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" id="helpdesk" >
             <h5 className="card-title">Help Desk</h5>
             <p className="card-text">Atención rápida y eficiente a incidentes tecnológicos.</p>
             <i className="bi bi-caret-down-fill"></i>
             <div className="collapse" id="collapse5" data-bs-parent="#accordionServicios">
               <div className="card card-body4 card-body">
                 <ul>
-                  <li className="list-item-servicio">Soporte remoto o presencial para resolver problemas técnicos del día a día.</li>
+                  <li className="list-item-servicio">Soporte remoto o presencial para resolver problemas técnicos del día a día</li>
+                   <li className="list-item-servicio">Mantenimiento correctivo y preventivo de equipos de cómputo </li>
+                  <li className="list-item-servicio">Mesa de ayuda de forma presencial y/o remota </li>
+                  <li className="list-item-servicio">Planes integrales de Outsourcing de soporte de TI </li>
+                  <li className="list-item-servicio">Inventario de equipos de cómputo </li>
                 </ul>
               </div>
             </div>
@@ -145,8 +164,8 @@ export default function ServiciosContent() {
         </div>
 
         {/* Servicio 6 */}
-        <div className="card">
-          <div className="card-body2 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false">
+        <div className="card" id="equipamiento">
+          <div className="card-body2 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" >
             <h5 className="card-title">Equipamiento</h5>
             <p className="card-text">Suministro de equipos tecnológicos de calidad.</p>
             <i className="bi bi-caret-down-fill"></i>
@@ -169,7 +188,7 @@ export default function ServiciosContent() {
 
         {/* Servicio 7 */}
         <div className="card">
-          <div className="card-body6" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false">
+          <div className="card-body6" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" id="consultoria" >
             <h5 className="card-title">Consultoría de software y SAP B1 for Hana</h5>
             <p className="card-text">Asesoría especializada en implementación y soporte de software empresarial.</p>
             <i className="bi bi-caret-down-fill"></i>
@@ -185,4 +204,6 @@ export default function ServiciosContent() {
       </div>
     </>
   );
+
+
 }

@@ -61,7 +61,7 @@ export default function Header() {
               <a className={`nav-link font-custom ${pathname === '/' ? 'active-link' : ''}`} href="/">Inicio</a>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/about' ? 'active-link' : ''}`} href="/nosotros">Nosotros</a>
+              <a className={`nav-link font-custom ${pathname === '/nosotros' ? 'active-link' : ''}`} href="/nosotros">Nosotros</a>
             </li>
             <li ref={dropdownRef} className={`nav-item dropdown${dropdownOpen ? ' show' : ''}`}>
               <a
@@ -80,14 +80,17 @@ export default function Header() {
                 <li><a className="dropdown-item" href="/servicios?section=networking">Networking</a></li>
                 <li><a className="dropdown-item" href="/servicios?section=web">Desarrollo Web</a></li>
                 <li><a className="dropdown-item" href="/servicios?section=licencias">Licenciamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=consultoria">Consultoría</a></li>
                 <li><a className="dropdown-item" href="/servicios?section=cloud">Cloud</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=equipamiento">Equipamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=helpdesk">Help Desk</a></li>
               </ul>
             </li>
             <li className="nav-item">
               <a className={`nav-link font-custom ${pathname === '/contactenos' ? 'active-link' : ''}`} href="/contactenos">Contáctenos</a>
             </li>
             <li className="nav-item">
-              <a className={`nav-link font-custom ${pathname === '/news' ? 'active-link' : ''}`} href="/novedades">Novedades</a>
+              <a className={`nav-link font-custom ${pathname === '/novedades' ? 'active-link' : ''}`} href="/novedades">Novedades</a>
             </li>
           </ul>
         </div>

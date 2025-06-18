@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; 
-
+import WhatsAppButton from '@/app/WhatsAppButton';
 import { Oxanium } from 'next/font/google';
 import './global.css';
 import Footer from '@/app/Footer';
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={oxanium.className}>
         <div>
+          
         <header >
           <Header />
         </header>
@@ -39,6 +40,8 @@ export default function RootLayout({ children }) {
 
             {children}
           </div>
+          <WhatsAppButton /> {/* Esto está bien ubicado */}
+
           <footer className="footer bg-footer text-white py-5 animate-footer">
             <Footer />
           </footer>
