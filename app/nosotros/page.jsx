@@ -3,7 +3,7 @@ export default function About() {
         <>
             <section className="about-background py-5 text-white text-center position-relative">
                 <div className="overlay position-absolute top-0 start-0 w-100 h-100"></div> {/* Capa oscura */}
-                <div className="first-section position-relative z-1">
+                <div className="first-section">
                     <h1 className="primary-services mb-4">Sobre Nosotros</h1>
                     <div className="container">
                         {/* Puedes agregar contenido adicional aquí */}
@@ -31,24 +31,39 @@ export default function About() {
 
             <section className="mission-vision-section py-5 bg-light">
                 <div className="container">
-                    <div className="row text-center">
-                        <div className="col-md-6 mb-4">
+                    <div className="row gy-5">
+
+                        {/* Misión */}
+                        <div className="col-12 col-md-6 d-flex flex-column text-center text-md-start">
                             <h3 className="mb-3">Nuestra Misión</h3>
-                            <p>
+                            <p className="mb-4">
                                 Obtener clientes satisfechos gracias a nuestro compromiso y dedicación. Garantizar la calidad y excelencia de nuestros servicios y productos.
                             </p>
-                            <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
+                            <div className="mt-auto">
+                                <a href="/servicios">
+                                    <button className="btn btn-primary w-100 w-md-auto">Ver Servicios</button>
+                                </a>
+                            </div>
                         </div>
-                        <div className="col-md-6 mb-4">
+
+                        {/* Visión */}
+                        <div className="col-12 col-md-6 d-flex flex-column text-center text-md-start">
                             <h3 className="mb-3">Nuestra Visión</h3>
-                            <p>
+                            <p className="mb-4">
                                 Consolidarnos como la mejor alternativa de soluciones tecnológicas en el mercado nacional, con los más altos certificados en informática.
                             </p>
-                            <a href="/servicios"> <button className="btn btn-primary">Ver Servicios</button></a>
+                            <div className="mt-auto">
+                                <a href="/servicios">
+                                    <button className="btn btn-primary w-100 w-md-auto">Ver Servicios</button>
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
+
+
         </>
     );
 }

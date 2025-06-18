@@ -30,7 +30,9 @@
 .dropdown-menu {
 
   border-radius: 0px;
-  padding: 0px;
+  padding: auto;
+
+
 }
 
 .text-decoration {
@@ -74,16 +76,6 @@
 
 }
 
-.primary-services {
-  color: white;
-  font-family: "Oxanium", Sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-  z-index: 2;
-  position: relative;
-
-
-}
 
 .primary-contactenos {
   color: white;
@@ -1008,15 +1000,18 @@ a {
 
 /* Mejora la usabilidad del header en pantallas pequeñas */
 .navbar-nav {
-  align-items: center;
+  align-items: start;
+  margin: auto;
+  
 }
 
 @media (max-width: 991px) {
   .navbar-collapse {
     background-color: rgba(0, 0, 50, 0.95);
-    padding: 1rem;
+margin-left: -20px;
     border-radius: 10px;
     animation: slideDown 0.3s ease-in-out;
+    text-align: start;
   }
 
   .navbar-nav {
@@ -1025,12 +1020,15 @@ a {
   }
 
   .navbar-nav .nav-item {
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin: auto;
   }
 
   .navbar-nav .nav-link {
     color: white !important;
     font-size: 1.1rem;
+    margin: auto;
+   margin-left: -120px;
   }
 
   .dropdown-menu {
@@ -1093,6 +1091,15 @@ a {
   color: #00477b;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .container {
+text-align: justify;
+padding: auto;
+  
+  }
+}
+
 
 .container.text-center p {
   font-size: 1.25rem;
