@@ -79,13 +79,13 @@ export default function Header() {
                 Soluciones
               </a>
               <ul className={`dropdown-menu${dropdownOpen ? ' show' : ''}`}>
-                <li><a className="dropdown-item" href="/servicios?section=networking">Networking</a></li>
-                <li><a className="dropdown-item" href="/servicios?section=web">Desarrollo Web</a></li>
-                <li><a className="dropdown-item" href="/servicios?section=licencias">Licenciamiento</a></li>
-                <li><a className="dropdown-item" href="/servicios?section=consultoria">Consultoría</a></li>
                 <li><a className="dropdown-item" href="/servicios?section=cloud">Cloud</a></li>
-                <li><a className="dropdown-item" href="/servicios?section=equipamiento">Equipamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=networking">Networking</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=licencias">Licenciamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=web">Desarrollo Web</a></li>
                 <li><a className="dropdown-item" href="/servicios?section=helpdesk">Help Desk</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=equipamiento">Equipamiento</a></li>
+                <li><a className="dropdown-item" href="/servicios?section=consultoria">Consultoría</a></li>
               </ul>
             </li>
             <li className="nav-item">

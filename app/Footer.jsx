@@ -27,22 +27,36 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="footer bg-footer text-white py-5">
       <div className="container">
-        <div className="row">
+        <div className="row row-cols-1 row-cols-md-4 g-4">
 
           {/* Columna 1 */}
-          <div className="col-md-3 mb-4 border-end border-white">
-            <img src="/img/Logo_DANYRIS-Blanco-Horizontal.png" alt="Danyris_SAC" className="mb-3" style={{ maxWidth: "290px" }} />
+          <div className="col border-end border-white pe-md-4 mb-4">
+            <img
+              src="/img/Logo_DANYRIS-Blanco-Horizontal.png"
+              alt="Danyris_SAC"
+              className="mb-3"
+              style={{ maxWidth: '290px' }}
+            />
+
             <p className={`font-tittle fade-up ${isVisible ? 'visible' : ''}`}>
-              En DANYRIS entendemos lo importante que es la entrega de un buen servicio hacia nuestros clientes, somos apasionados por la calidad y excelencia del servicio, estamos totalmente comprometidos con nuestros clientes.
+              En DANYRIS entendemos lo importante que es la entrega de un buen servicio
+              hacia nuestros clientes, somos apasionados por la calidad y excelencia del
+              servicio, estamos totalmente comprometidos con nuestros clientes.
             </p>
-            <img src="/img/LOGO ASOCIADOS.jpg" alt="CCL" style={{ maxWidth: "150px" }} />
+
+            <img
+              src="/img/LOGO ASOCIADOS.jpg"
+              alt="CCL"
+              style={{ maxWidth: '150px' }}
+            />
+
             <div className="d-flex gap-2 mt-3">
-              <img src="/img/osce.webp" alt="OSCE" style={{ maxWidth: "150px" }} />
+              <img src="/img/osce.webp" alt="OSCE" style={{ maxWidth: '150px' }} />
             </div>
           </div>
 
           {/* Columna 2 */}
-          <div className="col-md-3 mb-4">
+          <div className="col">
             <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>ACERCA DE DANYRIS SAC</h5>
             <ul className="list-unstyled">
               <li className={`punto fade-up ${isVisible ? 'visible' : ''}`}><p className='politica'>Políticas ISO</p></li>
@@ -61,7 +75,7 @@ export default function Footer() {
           </div>
 
           {/* Columna 3 */}
-          <div className="col-md-3 mb-4">
+          <div className="col">
             <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Menú</h5>
             <ul className="list-unstyled">
               {["Inicio", "Nosotros", "Servicios", "Contactenos", "Novedades"].map((text, i) => (
@@ -72,20 +86,49 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Columna 4 */}
-          <div className="col-md-3 mb-4">
-            <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>SOLUCIONES</h5>
-            <ul className="list-unstyled">
-              {["Data Center", "Cloud", "Networking y Cableado Estructurado", "Equipamiento", "Licenciamiento y Servicios"].map((item, i) => (
-                <li key={i} className={`punto fade-up ${isVisible ? 'visible' : ''}`}>
-                  <a className="font-li2">{item}</a>
-                </li>
-              ))}
-            </ul>
+          {/* Columna 4: Información de contacto */}
+          <div className="col">
+            <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Contacto</h5>
+
+            <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
+              <i className="bi bi-telephone me-2 text-white"></i>
+              <div>
+                <span className="text-gray-300">Teléfonos</span><br />
+                <strong className="text-white">(+51)1 480-0525 / +51 924 057 419</strong>
+              </div>
+            </div>
+
+            <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
+              <i className="bi bi-whatsapp me-2 text-white"></i>
+              <div>
+                <span className="text-gray-300">WhatsApp</span><br />
+                <strong className="text-white">924 057 419</strong>
+              </div>
+            </div>
+
+            <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
+              <i className="bi bi-envelope me-2 text-white"></i>
+              <div>
+                <span className="text-gray-300">Email</span><br />
+                <strong className="text-white">informes@danyris.com</strong>
+              </div>
+            </div>
+
+            <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
+              <i className="bi bi-geo-alt me-2 text-white"></i>
+              <div>
+                <strong className="text-white">
+                  Calle Victor Jara, Mz. R, Lt. 6, UPIS San José, Urb, Lurín 15822
+                </strong>
+              </div>
+            </div>
           </div>
+
+
 
         </div>
       </div>
+
     </footer>
   );
 }
