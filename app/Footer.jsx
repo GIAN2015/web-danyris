@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="col">
             <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Menú</h5>
             <ul className="list-unstyled">
-              {["Inicio", "Nosotros", "Servicios", "Contactenos", "Novedades"].map((text, i) => (
+              {["Inicio", "Nosotros", "Nuesras Soluciones", "Contactenos", "Novedades"].map((text, i) => (
                 <li key={i} className={`punto fade-up ${isVisible ? 'visible' : ''}`}>
                   <a className="font-li" href={`/${text.toLowerCase() === 'inicio' ? '' : text.toLowerCase()}`}>{text}</a>
                 </li>
