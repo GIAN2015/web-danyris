@@ -62,6 +62,25 @@ export default function ServiciosContent() {
       </div>
 
       <div className="container-servicios" id="accordionServicios">
+        <div className="card" id="equipamiento">
+          <div className="card-body2 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" >
+            <h5 className="card-title">Equipamiento</h5>
+            <p className="card-text">Suministro de equipos tecnológicos de calidad.</p>
+            <i className="bi bi-caret-down-fill"></i>
+            <div className="collapse" id="collapse3" data-bs-parent="#accordionServicios">
+              <div className="card card-body2 card-body">
+                <li className="list-item-servicio">PCs</li>
+                <li className="list-item-servicio">Workstation</li>
+                <li className="list-item-servicio">Impresoras y Escáneres</li>
+                <li className="list-item-servicio">Proyectores</li>
+                <li className="list-item-servicio">Pizarras Interactivas</li>
+                <li className="list-item-servicio">Suministros</li>
+                <li className="list-item-servicio">Puntos de Venta</li>
+                <li className="list-item-servicio">Otros periféricos</li>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Servicio 1 */}
         <div className="card">
           <div className="card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" id="cloud" >
@@ -163,25 +182,7 @@ export default function ServiciosContent() {
         </div>
 
         {/* Servicio 6 */}
-        <div className="card" id="equipamiento">
-          <div className="card-body2 card-body" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" >
-            <h5 className="card-title">Equipamiento</h5>
-            <p className="card-text">Suministro de equipos tecnológicos de calidad.</p>
-            <i className="bi bi-caret-down-fill"></i>
-            <div className="collapse" id="collapse3" data-bs-parent="#accordionServicios">
-              <div className="card card-body2 card-body">
-                <li className="list-item-servicio">PCs</li>
-                <li className="list-item-servicio">Workstation</li>
-                <li className="list-item-servicio">Impresoras y Escáneres</li>
-                <li className="list-item-servicio">Proyectores</li>
-                <li className="list-item-servicio">Pizarras Interactivas</li>
-                <li className="list-item-servicio">Suministros</li>
-                <li className="list-item-servicio">Puntos de Venta</li>
-                <li className="list-item-servicio">Otros periféricos</li>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
 
 
