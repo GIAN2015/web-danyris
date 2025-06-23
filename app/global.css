@@ -1282,4 +1282,10 @@ body {
 }
 .textcard{
   color: #00477b;
+
+}
+
+.textcard:hover{
+  color: white;
+  
 }
