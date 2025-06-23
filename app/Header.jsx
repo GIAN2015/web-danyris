@@ -76,7 +76,7 @@ export default function Header() {
                   setDropdownOpen(!dropdownOpen);
                 }}
               >
-                Soluciones
+                Nuestras Soluciones
               </a>
               <ul className={`dropdown-menu${dropdownOpen ? ' show' : ''}`}>
                 <li><a className="dropdown-item" href="/servicios?section=cloud">Cloud Computing</a></li>
