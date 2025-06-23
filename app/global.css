@@ -1230,3 +1230,56 @@ body {
   fill: white;
 }
 
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 320px;
+  perspective: 1000px;
+ 
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  
+  
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  
+  
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+  
+
+}
+
+.flip-card-front {
+  z-index: 2;
+    color: #00477b;
+
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  
+}
+
+.cardback{
+  background-color: #00477b;
+}
+.textcard{
+  color: #00477b;
+}

@@ -4,7 +4,7 @@ export default function About() {
             <section className="about-background py-5 text-white text-center position-relative">
                 <div className="overlay position-absolute top-0 start-0 w-100 h-100"></div> {/* Capa oscura */}
                 <div className="first-section">
-                    <h1 className="primary-services mb-4">Sobre Nosotros</h1>
+                    <h1 className="primary-services ">Sobre Nosotros</h1>
                     <div className="container">
                         {/* Puedes agregar contenido adicional aquí */}
                     </div>

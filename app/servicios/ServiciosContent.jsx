@@ -52,7 +52,7 @@ export default function ServiciosContent() {
       <div className="background-services py-5 text-white text-center">
         <div className="overlay"></div>
         <div className="first-section">
-          <h1 className="primary-services">Soluciones</h1>
+          <h1 className="primary-services">Nuestras Soluciones</h1>
           <div className="container"></div>
         </div>
       </div>

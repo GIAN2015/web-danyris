@@ -13,7 +13,7 @@ import BootstrapClient from './BootstrapClient';
 
 
 function Counter({ end, label }) {
- 
+
 
   const [count, setCount] = useState(0);
   const ref = useRef();
@@ -147,48 +147,55 @@ export default function Home() {
       </div>
 
       <div className="container text-center my-5 px-3">
-        <h1 className="section-title mb-4 text-2xl md:text-3xl font-bold">LO QUE OFRECEMOS</h1>
+  <h1 className="section-title mb-4 text-2xl md:text-3xl font-bold">LO QUE OFRECEMOS</h1>
 
-        <div className="row g-4">
-          {[
-            {
-              img: './img/services01.webp',
-              title: 'Outsourcing TI',
-              desc: 'Nos encargamos de brindar Outsourcing a todo nivel...',
-            },
-            {
-              img: './img/services02-1.webp',
-              title: 'Soporte Técnico',
-              desc: 'Mantenimiento correctivo y preventivo...',
-            },
-            {
-              img: './img/services03.webp',
-              title: 'Licenciamiento de Software',
-              desc: 'Tenemos las mejores soluciones de antivirus...',
-            },
-            {
-              img: './img/services05.webp',
-              title: 'Desarrollo de páginas web',
-              desc: 'Desarrollamos tu Página web para presentar tus productos...',
-            },
-          ].map((s, i) => (
-            <div key={i} className="col-12 col-md-6">
-              <div className="card h-100 shadow-sm border-0 sm:rounded-xl sm:overflow-hidden sm:shadow-md hover:sm:shadow-lg transition sm:duration-300">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="card-img-top img-fluid sm:w-full sm:h-48 sm:object-cover"
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
-                <div className="card-body9 p-4 text-start">
-                  <h5 className="card-title text-base sm:text-lg font-semibold">{s.title}</h5>
-                  <p className="card-text text-sm text-gray-600">{s.desc}</p>
-                </div>
+  <div className="row g-4">
+    {[
+      {
+        img: './img/services01.webp',
+        title: 'Outsourcing TI',
+        desc: 'Nos encargamos de brindar Outsourcing a todo nivel...',
+      },
+      {
+        img: './img/services02-1.webp',
+        title: 'Soporte Técnico',
+        desc: 'Mantenimiento correctivo y preventivo...',
+      },
+      {
+        img: './img/services03.webp',
+        title: 'Licenciamiento de Software',
+        desc: 'Tenemos las mejores soluciones de antivirus...',
+      },
+      {
+        img: './img/services05.webp',
+        title: 'Desarrollo de páginas web',
+        desc: 'Desarrollamos tu Página web para presentar tus productos...',
+      },
+    ].map((s, i) => (
+      <div key={i} className="col-12 col-md-6 col-lg-3">
+        <div className="flip-card mx-auto">
+          <div className="flip-card-inner">
+            {/* Frente */}
+            <div className="flip-card-front bg-white rounded shadow overflow-hidden h-100">
+              <img src={s.img} alt={s.title} className="w-100" style={{ height: '180px', objectFit: 'cover' }} />
+              <div className="p-3 text-start">
+                <h5 className="fw-bold">{s.title}</h5>
+                <p className="text-muted small">{s.desc}</p>
               </div>
             </div>
-          ))}
+
+            {/* Reverso */}
+            <div className="flip-card-back cardback text-white rounded shadow d-flex flex-column align-items-center justify-content-center p-4 h-100">
+              <h5 className="mb-3">{s.title}</h5>
+              <a href="/servicios" className="btn btn-light textcard fw-bold">Saber más</a>
+            </div>
+          </div>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
 
 
 

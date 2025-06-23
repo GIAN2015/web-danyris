@@ -27,7 +27,7 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="footer bg-footer text-white py-5">
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-4 g-4">
+        <div className="row row-cols-1 row-cols-md-5 g-4">
 
           {/* Columna 1 */}
           <div className="col border-end border-white pe-md-4 mb-4">
@@ -35,7 +35,7 @@ export default function Footer() {
               src="/img/Logo_DANYRIS-Blanco-Horizontal.png"
               alt="Danyris_SAC"
               className="mb-3"
-              style={{ maxWidth: '290px' }}
+              style={{ maxWidth: '240px' }}
             />
 
             <p className={`font-tittle fade-up ${isVisible ? 'visible' : ''}`}>
@@ -85,6 +85,17 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          <div className="col">
+            <h5 className={`mb-3 font-tittle fade-up ${isVisible ? 'visible' : ''}`}>Marcas</h5>
+            <ul className="list-unstyled">
+              {["Lenovo", "HP", "ASUS", "Epson", "Ubiquiti", "Logitech", "Microsoft"].map((brand, i) => (
+                <li key={i} className={`punto fade-up ${isVisible ? 'visible' : ''}`}>
+                  <span className="font-li">{brand}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
 
           {/* Columna 4: Información de contacto */}
           <div className="col">
@@ -113,6 +124,7 @@ export default function Footer() {
                 <strong className="text-white">informes@danyris.com</strong>
               </div>
             </div>
+
 
             <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
               <i className="bi bi-geo-alt me-2 text-white"></i>
