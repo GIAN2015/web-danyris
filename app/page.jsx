@@ -394,6 +394,21 @@ export default function Home() {
                         Cloud Computing
                       </button>
                     </li>
+                     <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Help Desk
+                      </button>
+                    </li>
+                     <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Consultoría
+                      </button>
+                    </li>
+                     <li>
+                      <button type="button" className="dropdown-item" onClick={handleServicioChange}>
+                        Desarrollo de páginas web
+                      </button>
+                    </li>
                     <li>
                       <button type="button" className="dropdown-item" onClick={handleServicioChange}>
                         Networking y Cableado Estructurado
