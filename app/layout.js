@@ -8,8 +8,8 @@ import Header from '@/app/Header';
 
 
 export const metadata = {
-  title: 'My Application',
-  description: 'This is a sample application using Next.js',
+  title: 'Danyris',
+  description: 'Danyris SAC ofrece servicios de consultoría y capacitación en diversas áreas.',
 };
 
 const oxanium = Oxanium({
