@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   const mensaje = encodeURIComponent("Hola, estoy interesado en sus servicios. ¿Podría brindarme más información? vengo de la página web de Danyris. Gracias. https://danyris.com/");
-  const numero = "51924057419";
+  const numero = "01 741-0619";
 
   return (
     <a
