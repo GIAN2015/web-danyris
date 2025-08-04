@@ -113,7 +113,7 @@ export default function Footer() {
               <i className="bi bi-whatsapp me-2 text-white"></i>
               <div>
                 <span className="text-gray-300">WhatsApp</span><br />
-                <strong className="text-white">924 057 419</strong>
+                <strong className="text-white">904 382 297</strong>
               </div>
             </div>
 
