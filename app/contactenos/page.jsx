@@ -237,7 +237,7 @@ const [error, setError] = useState('');
                                 <i class="bi bi-telephone-fill"></i>
                                 <div>
                                     <span class="label">Teléfonos</span><br />
-                                    <strong>(+51)1 480-0525 / +51 924 057 419</strong>
+                                    <strong>+51 904 382 297 / +51 924 057 419 / 741-0619</strong>
                                 </div>
                             </div>
 
@@ -245,7 +245,7 @@ const [error, setError] = useState('');
                                 <i class="bi bi-whatsapp"></i>
                                 <div>
                                     <span class="label">WhatsApp</span><br />
-                                    <strong>924 057 419</strong>
+                                    <strong>904 382 297</strong>
                                 </div>
                             </div>
 
@@ -253,7 +253,7 @@ const [error, setError] = useState('');
                                 <i class="bi bi-envelope-fill"></i>
                                 <div>
                                     <span class="label">Email</span><br />
-                                    <strong>informes@danyris.com</strong>
+                                    <strong>gian.sinarahua@danyris.com</strong>
                                 </div>
                             </div>
 

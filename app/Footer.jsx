@@ -105,7 +105,7 @@ export default function Footer() {
               <i className="bi bi-telephone me-2 text-white"></i>
               <div>
                 <span className="text-gray-300">Teléfonos</span><br />
-                <strong className="text-white">(+51)1 480-0525 / 01 741-0619</strong>
+                <strong className="text-white">(+51) 904 382 297 / 01 741-0619</strong>
               </div>
             </div>
 
