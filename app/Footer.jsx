@@ -121,7 +121,7 @@ export default function Footer() {
               <i className="bi bi-envelope me-2 text-white"></i>
               <div>
                 <span className="text-gray-300">Email</span><br />
-                <strong className="text-white">gian.sinarahua@danyris.com</strong>
+                <strong className="text-white">informes@danyris.com</strong>
               </div>
             </div>
 
