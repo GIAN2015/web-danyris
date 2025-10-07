@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-
 export default function Footer() {
   const footerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +28,7 @@ export default function Footer() {
       <div className="container">
         <div className="row row-cols-1 row-cols-md-5 g-4">
 
-          {/* Columna 1 */}
+
           <div className="col border-end border-white pe-md-4 mb-4">
             <img
               src="/img/Logo_DANYRIS-Blanco-Horizontal.png"
@@ -125,15 +124,6 @@ export default function Footer() {
               </div>
             </div>
 
-
-            <div className={`info-item d-flex mb-2 fade-up ${isVisible ? 'visible' : ''}`}>
-              <i className="bi bi-geo-alt me-2 text-white"></i>
-              <div>
-                <strong className="text-white">
-                  Calle Victor Jara, Mz. R, Lt. 6, UPIS San José, Urb, Lurín 15822
-                </strong>
-              </div>
-            </div>
           </div>
 
 

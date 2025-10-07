@@ -237,7 +237,7 @@ const [error, setError] = useState('');
                                 <i class="bi bi-telephone-fill"></i>
                                 <div>
                                     <span class="label">Teléfonos</span><br />
-                                    <strong>+51 904 382 297 / +51 924 057 419 / 741-0619</strong>
+                                    <strong>+51 913 589 865 / +51 904 382 297 / 01 741-0619</strong>
                                 </div>
                             </div>
 
@@ -245,7 +245,7 @@ const [error, setError] = useState('');
                                 <i class="bi bi-whatsapp"></i>
                                 <div>
                                     <span class="label">WhatsApp</span><br />
-                                    <strong>904 382 297</strong>
+                                    <strong>913 589 865</strong>
                                 </div>
                             </div>
 
@@ -257,12 +257,7 @@ const [error, setError] = useState('');
                                 </div>
                             </div>
 
-                            <div class="info-item">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <div>
-                                    <strong>Calle Victor Jara, Mz. R, Lt. 6, UPIS San José, Urb, Lurín 15822</strong>
-                                </div>
-                            </div>
+                           
 
                             <h5>SÍGUENOS</h5>
                             <div class="social-icons">
